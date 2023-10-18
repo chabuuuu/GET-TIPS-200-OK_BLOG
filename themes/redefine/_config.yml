@@ -333,11 +333,11 @@ footer:
   # Show website running time
   runtime: true # show website running time or not
   # Icon in footer, write fontawesome icon code here
-  icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
+  icon: '<i class="fa-solid fa-code fa-beat" style="--fa-animation-duration: 0.5s; color: #9bbec0"></i>'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
   start: 2023/10/18 18:53:00
   # Footer message
-  customize: Blog
+  customize: GET TIPS 200 OK - My Personal Blog
   # ICP record number. See https://beian.miit.gov.cn/
   icp:
     enable: false # Whether to enable
