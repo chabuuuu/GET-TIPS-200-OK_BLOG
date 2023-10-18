@@ -13,7 +13,7 @@ Một ngày rảnh rỗi, gác lại âu lo, và nhiều thứ nữa,.. :D Tôi 
 
 Chắc anh em nhìn dòng đấy cũng quen, cụ thể [200](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) OK là HTTP Status Code thông báo Suscess từ Server, còn GET là phương thức HTTP thường dùng để lấy tài nguyên.
 
-#### Blog này sẽ chia sẽ cụ thể những gì? 
+#### Blog này sẽ chia sẻ cụ thể những gì? 
 
 Còn tùy thuộc tôi muốn viết gì, nhưng có thể sẽ xoay quanh những thứ thuộc về Backend như các tips về JS, TS, NodeJS, kiến thức về thiết kế API, các Design Pattern,.. và sau này có thể là cả kiến thức của Devops (nói là sau này vì tôi vẫn đang học).
 
