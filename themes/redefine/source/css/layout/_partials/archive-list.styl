@@ -1,0 +1,89 @@
+$archive-year-font-size = 1.8rem
+$archive-year-count-font-size = 1.2rem
+$article-title-font-size = 1.2rem
+$article-date-font-size = 1rem
+
+@import '../../common/variables'
+
+.archive-list-container
+  .archive-item
+    margin-bottom $spacing-unit
+
+    &:last-child
+      margin-bottom 0
+
+    .archive-item-header
+      margin-bottom 10px
+
+      .archive-year
+        font-size $archive-year-font-size
+
+        +redefine-tablet()
+          font-size: $archive-year-font-size - 0.2rem
+
+        color var(--second-text-color)
+        font-weight 600
+        margin-right 6px
+
+      .archive-year-post-count
+        font-size $archive-year-count-font-size
+        font-weight 500
+        color var(--second-text-color)
+
+        +redefine-tablet()
+          font-size: $archive-year-count-font-size * 0.9
+
+    .article-list
+      padding-left 30px
+      font-size 14px
+      line-height 1.5
+
+      +redefine-tablet()
+        padding-left 0
+
+      .article-item
+        font-size 1rem
+        padding 3em 2em 1em
+        position relative
+        color rgba(0, 0, 0, 0.7)
+        border-left 2px solid var(--border-color)
+
+        a
+          overflow hidden
+          display block
+
+          .article-title
+            font-size 1.6rem
+            margin-bottom 0.5em
+            color var(--default-text-color)
+
+          &:hover
+            .article-title, .article-date
+              color var(--primary-color)
+
+        &::before
+          content attr(date-is)
+          position absolute
+          left 2em
+          font-weight bold
+          top 1em
+          display block
+          font-weight 700
+          font-size 0.785rem
+          color var(--third-text-color)
+
+        &::after
+          width 10px
+          height 10px
+          display block
+          top 1em
+          position absolute
+          left -6px
+          border-radius 10px
+          content ''
+          border 2px solid var(--third-text-color)
+          background var(--background-color)
+          transition background 0.2s ease-in-out
+
+        &:last-child
+          border-image var(--archive-timeline-last-child-color)

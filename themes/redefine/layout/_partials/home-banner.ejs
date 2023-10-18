@@ -1,0 +1,108 @@
+<% if (theme.home_banner.style === "fixed") { %>
+    <style>
+        .home-banner-container {
+            background: transparent !important;
+        }
+
+        .home-article-item,
+        .sidebar-links,
+        .sidebar-content,
+        a.page-number,
+        a.extend,
+        .sidebar-links .links:hover,
+        .right-bottom-tools,
+        footer.footer {
+            background-color: var(--background-color-transparent-80) !important;
+        }
+
+        .right-bottom-tools:hover,
+        a.page-number:hover,
+        a.extend:hover {
+            background-color: var(--primary-color) !important;
+        }
+
+        .site-info,
+        .home-article-sticky-label {
+            background-color: var(--background-color-transparent-15) !important;
+        }
+
+        .home-article-sticky-label {
+            backdrop-filter: none !important;
+        }
+    </style>
+
+    <div class="home-banner-background transition-fade">
+    </div>
+<% } %>
+
+<div class="home-banner-container flex justify-center items-center transition-fade">
+    <div class="content flex justify-center items-center">
+        <div class="description flex flex-col justify-center items-center"
+        <% if (theme.home_banner.custom_font.enable) { %>
+             style="font-family: '<%- theme.home_banner.custom_font.family %>', sans-serif; !important;"
+                <% } %>
+        >
+            <%- theme.home_banner.title || theme.style.first_screen.description || config.description %>
+            <%# theme.style.first_screen.description is deprecated %>
+            <% if (theme.home_banner.subtitle.length !== 0) { %>
+                <p><i id="subtitle"></i></p>
+            <% } %>
+        </div>
+        <% if (theme.home_banner.social_links.enable) { %>
+            <div class="social-contacts">
+                <% for (const key in theme.home_banner.social_links.links) { %>
+                    <% if(theme.home_banner.social_links.links[key]) { %>
+                        <% if(key === 'email') { %>
+                            <span class="social-contact-item <%= key %>">
+                                <a href="mailto:<%- theme.home_banner.social_links.links[key] %>">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </span>
+                        <% } else if(key.includes("fa-")) { %>
+                            <span class="social-contact-item">
+                                <a target="_blank" href="<%- theme.home_banner.social_links.links[key] %>">
+                                    <i class="<%= key %> fa-sm"></i>
+                                </a>
+                            </span>
+                        <% } else { %>
+                            <span class="social-contact-item <%= key %>">
+                                <a target="_blank" href="<%- theme.home_banner.social_links.links[key] %>">
+                                    <i class="fa-brands fa-<%= key %>"></i>
+                                </a>
+                            </span>
+                        <% } %>
+                    <% } %>
+                <% } %>
+                <% if (theme.home_banner.social_links.qrs && theme.home_banner.social_links.qrs.length !== 0) { %>
+                    <% for (const key in theme.home_banner.social_links.qrs) { %>
+                        <% if(theme.home_banner.social_links.qrs[key]) { %>
+                            <% if(key.includes("fa-")) { %>
+                                <span class="social-contact-item-qr">
+                                <a target="_blank">
+                                    <i class="<%= key %> fa-sm"></i>
+									<div class="social-qr-container fade-in-down-animation">
+										<img class="social-contacts-qr"
+                                             src="<%- url_for(theme.home_banner.social_links.qrs[key]) %>"/>
+									</div>
+                                </a>
+                            </span>
+                            <% } else { %>
+                                <span class="social-contact-item-qr <%= key %>">
+                                <a target="_blank">
+                                    <i class="fa-brands fa-<%= key %>"></i>
+									<div class="social-qr-container fade-in-down-animation">
+										<img class="social-contacts-qr"
+                                             src="<%- url_for(theme.home_banner.social_links.qrs[key]) %>"/>
+									</div>
+                                </a>
+                            </span>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+

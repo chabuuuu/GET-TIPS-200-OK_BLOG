@@ -1,0 +1,22 @@
+<div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;<%- __('comments') %>
+    </div>
+    <% if (theme.comment.enable === true && theme.comment.hasOwnProperty('system')) { %>
+
+        <% if  (theme.comment.system === 'waline') { %>
+            <%- partial('waline') %>
+
+        <% } else if (theme.comment.system === 'gitalk') { %>
+            <%- partial('gitalk') %>
+
+        <% } else if (theme.comment.system === 'twikoo') { %>
+            <%- partial('twikoo') %>
+        
+        <% } else if (theme.comment.system === 'giscus') { %>
+            <%- partial('giscus') %>
+        
+        <% } %>
+    <% } %>
+</div>

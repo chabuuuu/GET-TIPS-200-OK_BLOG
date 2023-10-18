@@ -1,0 +1,158 @@
+<div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <% if (page.cover || page.banner || (page.thumbnail && page.thumbnail !== false)) { %>
+                <% let articleCover = "";
+                if (page.cover && page.cover.includes("/")) {
+                articleCover = page.cover;
+                } else if (page.banner && page.banner.includes("/")) {
+                articleCover = page.banner;
+                } else if (page.thumbnail && page.thumbnail !== null) {
+                articleCover = page.thumbnail;
+                } else if (config.marked.postAsset && config.marked.postAsset == true) {
+                articleCover = [page.path, page.cover || page.banner].join("/");
+                }
+                %>
+                <% if (articleCover) { %>
+                <img src="<%= url_for(articleCover) %>" alt="<%= page.title %>" class="max-w-none"/>
+                <% } %>
+                <h1 class="article-title-cover"><%= page.title %></h1>
+            <% } else { %>
+                <h1 class="article-title-regular"><%= page.title %></h1>
+            <% } %>
+            </div>
+            
+                    
+        
+        <% if (theme.info.author || config.author) { %>
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <%- image_tag((typeof page.avatar === "string" && (page.avatar)) || page.author?.avatar || theme.defaults.avatar) %>
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold"><%= (typeof page.author === "string" && (page.author)) || page.author?.name || theme.info.author || config.author %></span>
+                        <% if (theme.hasOwnProperty('articles') && theme.articles.author_label.enable === true) { %>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1"><%- getAuthorLabel(site.posts.length, theme.articles.author_label.auto, theme.articles.author_label.list) %></span>
+                        <% } %>
+                    </div>
+                    <div class="meta-info">
+                        <%- partial('_meta/article-info', {articleObject: page, index: true}) %>
+                    </div>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="article-header-meta-info">
+                <div class="meta-info">
+                    <%- partial('_meta/article-info', {articleObject: page, index: true}) %>
+                </div>
+            </div>
+        <% } %>
+
+        <% if (page.expires && page.expires !== "") {%>
+                <div class="note red icon article-expire hidden" id="expiration-container">
+                    <i class="fa-solid fa-timer expire-icon"></i>
+                    <span class="expire-label" id="expiration-date"><%= __('expired', "some") %></span>
+                </div>
+
+            <script data-swup-reload-script>
+                function updateExpirationDate() {
+                    try{
+                        const expiredDate = new Date("<%= page.expires %>");
+                        const updatedDate = new Date("<%= page.updated %>");
+                        const now = new Date();
+                        const expirationValue = document.getElementById("expiration-date");
+                        const expirationContainer = document.getElementById("expiration-container");
+                        let daysAgo = Math.floor((now - updatedDate) / (1000 * 60 * 60 * 24));
+                        if (expiredDate < now) {
+                            expirationContainer.classList.remove("hidden");
+                            console.log(daysAgo)
+                            expirationValue.innerHTML = expirationValue.innerHTML.replace("some", daysAgo);
+                        }
+                    } catch (e) {}
+                }
+                document.addEventListener("DOMContentLoaded", function () {
+                    updateExpirationDate();
+                });
+                try {
+                    swup.hooks.on("page:view", updateExpirationDate)
+                } catch (e){}
+            </script>
+        <% } %>
+
+
+        <div class="article-content markdown-body">
+            <%- page.content %>
+        </div>
+
+        <% if (theme.articles.copyright) { %>
+            <div class="post-copyright-info">
+                <%- partial('_meta/article-copyright') %>
+            </div>
+        <% } %>
+
+        <% if (page.tags.length) { %>
+            <ul class="post-tags-box">
+                <% page.tags.forEach((tag) => { %>
+                    <li class="tag-item">
+                        <a href="<%- url_for(tag.path) %>">#<%= tag.name %></a>&nbsp;
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+
+        <%- articleRecommendationGenerator(page) %>
+
+        <% if (page.prev || page.next) { %>
+            <div class="article-nav">
+                <% if (page.prev) { %>
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="<%= url_for(page.prev.path) %>"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item"><%= page.prev.title %></span>
+                                <span class="post-nav-item"><%= __('prev_posts') %></span>
+                            </span>
+                        </a>
+                    </div>
+                <% } %>
+                <% if (page.next) { %>
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="<%= url_for(page.next.path) %>"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item"><%= page.next.title %></span>
+                                <span class="post-nav-item"><%= __('next_posts') %></span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+        <% } %>
+
+
+        <% if (theme.comment.enable === true && theme.comment.hasOwnProperty('system') && page.comment !== false && page.comment !== false) { %>
+            <div class="comment-container">
+                <%- partial('_partials/comments/comment') %>
+            </div>
+        <% } %>
+    </div>
+
+    <% if (is_post() && theme.articles.toc.enable === true) { %>
+        <div class="toc-content-container">
+            <%- partial('_widgets/toc') %>
+        </div>
+    <% } %>
+</div>
+

@@ -1,0 +1,31 @@
+<% const postList = createNewArchivePosts(posts_new) %>
+<% let cachedDate = null %>
+<div class="archive-list-container">
+    <% postList.forEach(postYear => { %>
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year"><%= postYear.year %></span>
+                <span class="archive-year-post-count">[<%= postYear.postList.length %>]</span>
+            </div>
+            <ul class="article-list">
+              <% postYear.postList.forEach(post => { %>
+                <% if (!cachedDate || cachedDate != date(post.date, 'MM-DD')) { %>
+                    <% cachedDate = date(post.date, 'MM-DD') %>
+                    <li class="article-item" date-is='<%= date(post.date, 'MM-DD') %>'>
+                <% } %>
+                <% if (cachedDate == date(post.date, 'MM-DD')) { %>
+                    <a href="<%- url_for(post.path) %>">
+                        <span class="article-title"><%= post.title %></span>
+                    </a>
+                <% } else {%>
+                    <% cachedDate = date(post.date, 'MM-DD') %>
+                    <a href="<%- url_for(post.path) %>">
+                        <span class="article-title"><%= post.title %></span>
+                    </a>
+                </li>
+                <% } %>
+              <% }) %>
+            </ul>
+        </section>
+    <% }) %>
+</div>
