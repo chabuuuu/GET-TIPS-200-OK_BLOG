@@ -21,5 +21,5 @@ Còn tùy thuộc tôi muốn viết gì, nhưng có thể sẽ xoay quanh nhữ
 
 Nói chung là tùy hứng haha
 
-Vậy đấy, và từ ngày mai, tôi sẽ bắt đầu viết 1 post đầu tiên, chủ đề là về Selenium nhé!
+Vậy đấy, và từ ngày mai, tôi sẽ bắt đầu viết 1 post đầu tiên, chủ đề là về Typescript nhé!
 Thân chào!
