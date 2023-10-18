@@ -303,7 +303,7 @@ comment:
       lang: en-US # Waline language. e.g. zh-CN, en-US. See https://waline.js.org/guide/client/i18n.html
     # Gitalk comment system. See https://github.com/gitalk/gitalk
     gitalk:
-      clientID: 2ad68517bf9e6e5189b5x # GitHub Application Client ID
+      clientID: 2ad68517bf9e6e5189b5 # GitHub Application Client ID
       clientSecret: 8130e8f1e22416cedba18bb862f865c6ef33da5e # GitHub Application Client Secret
       repo: Gitalk-GETTIPS200OK # GitHub repository
       owner: chabuuuu # GitHub repository owner
