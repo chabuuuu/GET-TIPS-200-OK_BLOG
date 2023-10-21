@@ -2,6 +2,7 @@
 title: Lời nói đầu
 date: 2023-10-18 18:08:26
 tags:
+license: all_rights_reserved
 ---
 Xin chào! Tôi là chabuuuu.
 

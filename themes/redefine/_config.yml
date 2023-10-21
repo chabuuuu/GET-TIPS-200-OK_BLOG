@@ -136,20 +136,24 @@ home_banner:
     # Whether to enable custom font
     enable: true
     # Font family
-    family: Montserrat
+    family: Montserrat #Chillax #Montserrat
     # URL to font CSS file
+    #url: https://fonts.cdnfonts.com/css/chillax?styles=134675
     url: https://fonts.googleapis.com/css2?family=Montserrat&display=swap
   # Home banner social links
   social_links:
     # Whether to enable
-    enable: false
+    enable: true
     # Social links
     links:
-      github:  # your GitHub URL
+      github: https://github.com/chabuuuu  # your GitHub URL
       instagram: # your Instagram URL
       zhihu:  # your ZhiHu URL
       twitter:  # your twitter URL
-      email:  # your email
+      email: haphuthinh332004@gmail.com  # your email
+      linkedin: https://www.linkedin.com/in/thinhhaphu33/
+      facebook: https://www.facebook.com/bu.chan0310
+      youtube: https://youtube.com/@chabu4877?si=StA3QKeOsEmQAE8T
       # ...... # you can add more
     # Social links with QRcode drawers
     qrs:
@@ -172,19 +176,31 @@ navbar:
     Home: 
       path: / 
       icon: fa-regular fa-house # can be empty
+    # Tags:
+    #     path: /tags
+    #     icon: fa-solid fa-tags
     # Archives: 
     #   path: /archives 
     #   icon: fa-regular fa-archive # can be empty
     # Status: 
     #   path: https://status.evanluo.top/
     #   icon: fa-regular fa-chart-bar
-    # About: 
-    #   icon: fa-regular fa-user
-    #   submenus:
-    #     Me: /about
-    #     Github: https://github.com/EvanNotFound/hexo-theme-redefine
-    #     Blog: https://ohevan.com
-    #     Friends: /friends
+    About: 
+      icon: fa-regular fa-user
+      submenus:
+        This Blog: /2023/10/18/My-New-Post/
+        Me: /comming-soon
+        Github: https://github.com/chabuuuu
+        Facebook : https://www.facebook.com/chabuuuu
+        Portfolio: https://bento.me/haphuthinh
+    Tài liệu: 
+      icon: fa fa-file-text
+      submenus: 
+        Backend: /comming-soon
+        Frontend: /comming-soon
+        Devops: /comming-soon
+        IoT: /comming-soon
+        AI: /comming-soon
     # Links: 
     #   icon: fa-regular fa-link
     #   submenus:
@@ -195,7 +211,7 @@ navbar:
   # Navbar search (local search). Requires hexo-generator-searchdb (npm i hexo-generator-searchdb). See https://github.com/theme-next/hexo-generator-searchdb
   search:
     # Whether to enable
-    enable: false
+    enable: true
     # Preload search data when the page loads
     preload: true
 # NAVIGATION BAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
