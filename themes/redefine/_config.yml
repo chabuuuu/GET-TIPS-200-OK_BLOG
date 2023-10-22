@@ -196,9 +196,9 @@ navbar:
     Tài liệu: 
       icon: fa fa-file-text
       submenus: 
-        Backend: /comming-soon
+        Backend: /tai-lieu-backend
         Frontend: /comming-soon
-        Devops: /comming-soon
+        Devops: /tai-lieu-devops
         IoT: /comming-soon
         AI: /comming-soon
     # Links: 
