@@ -1,6 +1,6 @@
 ---
 title: Typescript trong Nodejs - Tại sao lại dùng và cách set up
-date: 2023-10-22 13:27:36
+date: 2023-10-22 17:32:46
 tags:
 ---
 {% asset_img typescript-nodejs.png %}
@@ -263,7 +263,3 @@ Và BOOM!, khi GET / thì ta sẽ được trả về file json như sau:
 Vậy là ta đã không gặp phải bất kì lỗi nào như khi dùng Javascript, chỉ bằng cách khai báo rõ ràng kiểu dữ liệu ngay từ đầu bằng Typescript!
 
 Bài viết của tôi cũng đã khá dài, hy vọng sẽ giúp ích được cho các bạn. Tạm biệt.
-
-
-
-
