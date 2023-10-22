@@ -7,4 +7,4 @@ tags:
 
 Test
 
-{% asset_img exampleWithTS.png %}
+{% asset_img exampleWithTS1.png %}
