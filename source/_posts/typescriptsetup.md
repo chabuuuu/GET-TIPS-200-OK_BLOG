@@ -123,17 +123,17 @@ Với quá nhiều ưu điểm như vậy, thì không chân chờ gì nữa mà
 Dưới đây là một cách cơ bản để set up Typescript trong Nodejs
 
 - Đầu tiên tôi sẽ khởi tạo 1 dự án Nodejs
-``````bash
+``````shell
 npm init -y
 ``````
 
 - Tiếp đến ta cài đặt Typescript Package vào Dev dependencies:
-``````bash
+``````shell
 npm install typescript --save-dev
 ``````
 
 - Ta khởi tạo file tsconfig.json bằng lệnh sau:
-``````bash
+``````shell
 npx tsc --init
 ``````
 
@@ -188,7 +188,7 @@ Phần config trong file tsconfig này tôi sẽ viết chi tiết hơn trong 1 
 
 Tôi sẽ cài Express bằng lệnh sau:
 
-``````bash
+``````shell
 npm i express @types/express 
 ``````
 
@@ -198,7 +198,7 @@ Vậy là cơ bản đã xong, giờ tôi sẽ thử giải quyết vấn đề 
 
 Bây giờ tôi sẽ cài các thư việc cần thiết để đọc file csv:
 
-``````bash
+``````shell
 npm i csv-parser fs
 ``````
 
