@@ -23,7 +23,7 @@ defaults:
   # Favicon
   favicon: /images/avatar.png
   # Site logo
-  logo: 
+  logo: /images/avatar.png
   # Site avatar
   avatar: /images/avatar.png
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
