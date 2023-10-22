@@ -15,9 +15,9 @@ TypeScript ra đời bắt nguồn từ những thiếu sót của JavaScript đ
 Tôi học UIT, và ở đó tôi được học qua một môn có tên là Nhập môn lập trình, thì ở đó họ dạy tôi C++, cả sau này khi học các môn OOP hay DSA, ngôn ngữ sử dụng mà trường minh họa vẫn là C++. Và có vẻ như cũng có nhiều trường đại học giảng dạy C++ cho sinh viên như là một ngôn ngữ nền tảng, cho nên các bạn sẽ khá quen thuộc với cú pháp C++ như sau:
 
 ```c++
-int Age;
-string Name;
-float Score;
+int age;
+string name;
+float score;
 ```
 Các bạn có thể thấy kiểu syntax trên tạo nên một cấu trúc rất rõ ràng, kiểu dữ liệu được viết tường minh ra giúp cho việc đọc hiểu code dễ dàng hơn.
 
@@ -28,14 +28,14 @@ Nhưng quay trở lại với Javascript, tôi ngỡ ngàng vì kiểu syntax đ
 Cụ thể như sau:
 
 ``````javascript
-var Age
-var Name
-var Score
+var age
+var name
+var score
 ``````
 
 Wait, rõ ràng là viết như thế mọi thứ sẽ vô cùng đơn giản và nhẹ đầu cho lập trình viên trong quá trình phát triển mà? Thế thì có gì đáng nói chứ? 
 
-Đồng ý là kiểu syntax như trên giúp việc code đỡ lằng nhằng hơn, nhưng chờ đã, trong 1 dự án lớn không phải chỉ có mình bạn làm việc, có thể là một người nào đó sau này xem code của bạn, hoặc chính bạn tự xem lại code của mình và...cái hỗn độn gì đây? Việc bạn khai báo biến như vậy thì bạn sẽ không hề biết kiểu dữ liệu của nó, bạn phải đọc toàn bộ logic bên dưới, xem biến đó được dùng vào việc gì, dùng như thế nào để để đoán ra kiểu dữ liệu của nó. Khá mất thời gian.
+Đồng ý là kiểu syntax như trên giúp việc code đỡ lằng nhằng hơn, nhưng chờ đã, trong 1 dự án lớn không phải chỉ có mình bạn làm việc, có thể là một người nào đó sau này xem code của bạn, hoặc chính bạn tự xem lại code của mình và...cái hỗn độn gì đây? Việc bạn khai báo biến như vậy thì bạn sẽ không hề biết kiểu dữ liệu của nó, bạn phải đọc toàn bộ logic bên dưới, xem biến đó được dùng vào việc gì, dùng như thế nào để đoán ra kiểu dữ liệu của nó. Khá mất thời gian.
 
 Thêm một vấn đề nữa mà ta sẽ hay gặp phải, tôi lấy ví dụ như sau: 
  Lúc đầu, trong quá trình phát triển tôi khai báo biến Year, và dù cho Javascript không cần ghi rõ ra kiểu dữ liệu của biến này, nhưng trong đầu tất cả mọi người đều hiển nhiên cho rằng đó là kiểu number, đúng chữ? (rõ ràng là vậy), nhưng xuống phía dưới, qua một vài function thì có thể vô tình làm biến Year ban đầu bị đổi kiểu dữ liệu, như thành string chẳng hạn, điều đó dẫn tới những lỗi logic sau này mà chỉ khi thực thi ta mới thấy được.
