@@ -3,7 +3,7 @@ title: Typescript trong Nodejs - Tại sao lại dùng và cách set up
 date: 2023-10-22 17:54:57
 tags:
 ---
-{% asset_img typescript-nodejs.png %}
+anh o day
 
 ## 1. Về Typescript
 
@@ -22,7 +22,7 @@ Các bạn có thể thấy kiểu syntax trên tạo nên một cấu trúc r�
 
 Nhưng quay trở lại với Javascript, tôi ngỡ ngàng vì kiểu syntax đặc biệt của nó (và cả Python nữa, nhưng đây là một trường hợp đặc biệt mà tôi sẽ trình bày trong 1 post khác).
 
-{% asset_img python&js.png %}
+anh python o day
 
 Cụ thể như sau:
 
@@ -103,7 +103,7 @@ Nhưng mà, vấn đề ở đây là, bạn không hề biết về lỗi xảy
 
 Tôi yêu Typescript, tôi yêu sự tường minh và rõ ràng rành mạch của nó như cái cách mà Java hay C++ đang làm. Cụ thể, với cùng đoạn code trên khi dùng Typescript sẽ như sau: 
 
-{% asset_img exampleWithTS1.png %}
+anh runtime compile o day
 
 Bạn có thể thấy screenshot đỏ chót phía trên, khác hẳn với anh js im phăng phắc thì code bằng Typescript sẽ đầy cảnh báo la làng báo lỗi trong khi tôi còn chưa chạy chương trình, điều đó giúp phát hiện rất sớm các lỗi không đáng có trong quá trình phát triển
 
@@ -193,7 +193,7 @@ npm i express @types/express
 
 Vậy là cơ bản đã xong, giờ tôi sẽ thử giải quyết vấn đề năm hết hạn hợp đồng mà đã ví dụ ở trên bằng Typescript và Nodejs. Giả dụ tôi tạo 1 dự án có cấu trúc như sau:
 
-{% asset_img structure-tree.png %}
+anh tree o day
 
 Bây giờ tôi sẽ cài các thư việc cần thiết để đọc file csv:
 
@@ -258,7 +258,7 @@ app.listen(port, () => {
 
 Và BOOM!, khi GET / thì ta sẽ được trả về file json như sau: 
 
-{% asset_img json_result.png %}
+anh ket qua o day
 
 Vậy là ta đã không gặp phải bất kì lỗi nào như khi dùng Javascript, chỉ bằng cách khai báo rõ ràng kiểu dữ liệu ngay từ đầu bằng Typescript!
 
