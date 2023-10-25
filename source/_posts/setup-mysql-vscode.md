@@ -2,9 +2,9 @@
 title: Cách kết nối MySQL với VSCode để tận dụng AI nhắc lệnh SQL và vô vàn món ăn chơi khác
 date: 2023-10-23 08:51:43
 tags:
+thumbnail: "/images/setup-mysql-vscode/thumbnail.png"
 license: all_rights_reserved
 ---
-![Mang lag qua khong load duoc anh nay, sorry](/images/setup-mysql-vscode/thumbnail.png)
 
 Bạn mệt mỏi vì phải viết đi viết lại các câu lệnh SQL tương tự nhau rất nhiều lần? 
 

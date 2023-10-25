@@ -3,6 +3,9 @@ title: tai-lieu-backend
 date: 2023-10-22 22:24:11
 ---
 # Tổng hợp tài liệu Backend
+
+![Alt](/images/tai-lieu-backend/thumbnail.png)
+
 ## Data structures and algorithms
 ### 1. [Leetcode-js](https://github.com/everthis/leetcode-js)
 Github repo: https://github.com/everthis/leetcode-js

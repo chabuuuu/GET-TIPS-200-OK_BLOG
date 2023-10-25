@@ -2,11 +2,13 @@
 title: Typescript trong Nodejs - Tại sao lại dùng và cách set up
 date: 2023-10-22 17:54:57
 tags:
+thumbnail: "/images/typescriptsetup/typescript-nodejs.png"
 license: all_rights_reserved
 ---
-![Mang lag qua khong load duoc anh nay, sorry](/images/typescriptsetup/typescript-nodejs.png)
 
 ## 1. Về Typescript
+
+![Mang lag qua khong load duoc anh nay, sorry](/images/typescriptsetup/thumbnail.png)
 
  TypeScript là một ngôn ngữ lập trình hướng đối tượng được phát triển và duy trì bởi Microsoft. Nó là một tập hợp siêu cú pháp nghiêm ngặt của JavaScript và thêm tính năng kiểu tĩnh tùy chọn vào ngôn ngữ.
 
