@@ -1,5 +1,5 @@
 ---
-title: Cách kết nối MySQL với VSCode để tận dụng AI nhắc lệnh SQL và vô vàn món ăn chơi khác
+title: Cách kết nối SQL Server với VSCode để tận dụng AI nhắc lệnh SQL và vô vàn món ăn chơi khác
 date: 2023-10-23 08:51:43
 tags:
 thumbnail: "/images/setup-mysql-vscode/thumbnail.png"
@@ -46,7 +46,7 @@ Vậy thì xin chào, hôm nay tôi sẽ hướng dẫn bạn cách kết nối 
 
 ![Mang lag qua khong load duoc anh nay, sorry](/images/setup-mysql-vscode/done_mssql.png)
 
-Done! Vậy là xong, nhìn sang bên tay trái bạn sẽ thấy một giao diện giống Object Explorer như trong Microsoft SQL Server Management Studio. Bạn có thể thuộc phải vào Database và Create Query để test thử (nhấn Ctrl + Shilf + E để Execute Query)
+Done! Vậy là xong, nhìn sang bên tay trái bạn sẽ thấy một giao diện giống Object Explorer như trong Microsoft SQL Server Management Studio. Bạn có thể chuột phải vào Database và Create Query để test thử (nhấn Ctrl + Shilf + E để Execute Query)
 
 ## 2. Tabnine Extension
 ### Tabnine là gì?

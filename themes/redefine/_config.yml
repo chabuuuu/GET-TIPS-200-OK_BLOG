@@ -171,6 +171,10 @@ navbar:
     left: "#b36125" #"#f78736" #left side 
     right: "#1f51a6" #"#367df7"  #right side
     transparency: 35 #percent (10-99)
+  categories:
+    Categories: 
+        icon: fa-solid fa-folder 
+        path: /categories/ 
   # Navbar links
   links:
     Home: 
