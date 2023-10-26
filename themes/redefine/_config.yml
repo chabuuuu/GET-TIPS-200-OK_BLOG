@@ -171,10 +171,7 @@ navbar:
     left: "#b36125" #"#f78736" #left side 
     right: "#1f51a6" #"#367df7"  #right side
     transparency: 35 #percent (10-99)
-  categories:
-    Categories: 
-        icon: fa-solid fa-folder 
-        path: /categories/ 
+
   # Navbar links
   links:
     Home: 
@@ -205,6 +202,12 @@ navbar:
         Devops: /tai-lieu-devops
         IoT: /comming-soon
         AI: /comming-soon
+    Categories: 
+      icon: fa-solid fa-folder 
+      path: /categories/ 
+    Tags: #取名随意
+      icon: fa-solid fa-tags #图标
+      path: /tags/ #链接
     # Links: 
     #   icon: fa-regular fa-link
     #   submenus:

@@ -1,7 +1,11 @@
 ---
 title: Cách kết nối SQL Server với VSCode để tận dụng AI nhắc lệnh SQL và vô vàn món ăn chơi khác
 date: 2023-10-23 08:51:43
-tags:
+tags: 
+- sqlserver
+- vscode
+categories: 
+- database
 thumbnail: "/images/setup-mysql-vscode/thumbnail.png"
 license: all_rights_reserved
 ---
