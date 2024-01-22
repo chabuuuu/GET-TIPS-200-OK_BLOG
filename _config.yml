@@ -74,6 +74,26 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+
+hexo_submit_urls_to_search_engine:
+  submit_condition: count # Submitted condition, optional value: count | period, Now only supports count
+  count: 10 # Submit the latest 10 links
+  period: 900 # Submit a link with a modification time of 900 seconds
+  google: 1 #  Whether to submit to Google, optional values: 1 | 0 (0: No; 1: Yes)
+  bing: 0 #  Whether to submit to bing, optional value: 1 | 0 (0: no; 1: yes)
+  baidu: 0 # Whether to submit to baidu, optional value: 1 | 0 (0: no; 1: yes)
+  txt_path: submit_urls.txt ## The address of the text document, the link to be pushed will be saved in this text document
+  baidu_host: https://cjh0613.github.io ## Domain name registered in Baidu webmaster platform
+  baidu_token: xxxxx ## Please note that this is your secret key, so do not publish the website source code in the public repository!
+  bing_host: https://cjh0613.github.io ## Domain name registered in Bing webmaster platform
+  bing_token: xxxxx ## Please note that this is your secret key, so do not publish the website source code in the public repository!
+  google_host: https://gettips200ok.netlify.app/ ## Domain name registered in Google webmaster platform
+  google_key_file: google-api.json # Store the json file of the google key in the root directory of the website (same location as the hexo _config.yml file), please do not publish the source code of the website in the public warehouse!
+  google_proxy: 0 # Set the proxy used to submit urls to Google
+  replace: 0  # Whether to replace some substrings in links, optional value: 1 | 0 (0: no; 1: yes)
+  find_what: https://gettips200ok.netlify.app/
+  replace_with: https://gettips200ok.netlify.app/
+
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true
@@ -106,4 +126,6 @@ theme: redefine
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+- type: cjh_google_url_submitter
+- type: cjh_bing_url_submitter
+- type: cjh_baidu_url_submitter
