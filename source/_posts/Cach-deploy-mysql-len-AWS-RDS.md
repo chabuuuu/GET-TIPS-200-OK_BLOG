@@ -8,9 +8,12 @@ tags:
 categories:
 - cloud service
 - aws
-thumbnail: "/images/Cach-deploy-mysql-len-AWS-RDS/thumbnail.png"
+thumbnail: "/images/Cach-deploy-mysql-len-AWS-RDS/image.png"
 license: all_rights_reserved
 ---
+
+![alt text](/images/Cach-deploy-mysql-len-AWS-RDS/thumbnail.png)
+
 
 Trong bài viết này tôi sẽ hướng dẫn mọi người cách deploy MySQL (hoặc kể cả PostgreSQL, SQL Server) lên AWS RDS một cách an toàn (không bị charge phí tào lao). 
 
