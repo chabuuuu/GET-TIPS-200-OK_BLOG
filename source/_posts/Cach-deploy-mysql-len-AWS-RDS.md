@@ -8,7 +8,7 @@ tags:
 categories:
 - cloud service
 - aws
-thumbnail: "/images/Cach-deploy-mysql-len-AWS-RDS/image.png"
+thumbnail: "/images/Cach-deploy-mysql-len-AWS-RDS/image-1.png"
 license: all_rights_reserved
 ---
 
