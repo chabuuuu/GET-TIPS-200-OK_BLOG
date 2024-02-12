@@ -93,7 +93,7 @@ Vậy thì ta phải chọn cái nào mới đúng, ở đây tôi khuyến khí
 Tại sao? 
 Trong danh sách các service được free của tài khoản Free Tier mà tôi đã cung cấp ở đầu bài viết cũng có ghi rõ ràng "750 Hours of Amazon RDS Single-AZ db.t2.micro, db.t3.micro, and db.t4g.micro".
 
-Lý do là vì, db.t3.micro là một loại CPU thuộc họ CPU T3, đây là một loại CPU có thêm chức năng BURST MODE, có nghĩa là nếu cpu bị tải cao đến một mức nào đó, thì AWS sẽ charge thêm phí của bạn. Bạn có thể đọc ảnh dưới đây. 
+Lý do là vì, db.t3.micro là một loại RDS Instance thuộc họ RDS Instance T3, đây là một loại RDS Instance có thêm chức năng BURST MODE, có nghĩa là nếu cpu bị tải cao đến một mức nào đó, thì AWS sẽ charge thêm phí của bạn. Bạn có thể đọc ảnh dưới đây. 
 
 ![alt text](/images/Cach-deploy-mysql-len-AWS-RDS/image-12.png)
 
@@ -103,7 +103,7 @@ Theo đó, AWS sẽ tính phí sử dụng CPU theo concept sau: họ sử dụn
 
 Và tất nhiên, nếu đi theo concept như vậy sẽ rất khó quản lý phí phát sinh đặc biệt là với người mới, và vì chúng ta đang dùng Free Tier nên tất nhiên cũng sẽ không muốn mất thêm một khoảng phí nào. Thế nhưng nếu đưa vào production thì chức năng này sẽ rất hay, vì nó sẽ giúp handle được lưu lượng truy cập cao của sản phẩm dưới dạng production.
 
-Nghía qua db.t2.micro, đây là một loại CPU thuộc họ T2, concept của loại này cũng sẽ tiêu thụ CPU Credit, nhưng nó sẽ không sử dụng Burst Mode để "mua thêm" CPU Credit từ AWS nếu sử dụng hết, thay vào đó CPU sẽ nghẽn đi nếu dùng quá CPU Credit. Vì vậy, nếu sử dụng loại này, ta yên tâm là sẽ không có bất kì chi phí phát sinh nào khác ngoài ý muốn.
+Nghía qua db.t2.micro, đây là một loại RDS Instance thuộc họ T2, concept của loại này cũng sẽ tiêu thụ CPU Credit, nhưng nó sẽ không sử dụng Burst Mode để "mua thêm" CPU Credit từ AWS nếu sử dụng hết, thay vào đó CPU sẽ nghẽn đi nếu dùng quá CPU Credit. Vì vậy, nếu sử dụng loại này, ta yên tâm là sẽ không có bất kì chi phí phát sinh nào khác ngoài ý muốn.
 
 ##### 7. Phần Storage này các bạn cứ để nguyên 20GB nhé, tuyệt đối không để hơn vì AWS Free Tier quy định RDS chỉ được dùng Free có 20GB thôi
 
