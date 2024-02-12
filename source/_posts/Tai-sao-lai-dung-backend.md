@@ -10,12 +10,12 @@ categories:
 readTime: About 9 minutes
 cover_image: /images/Tai-sao-lai-dung-backend/WHY.png
 license: all_rights_reserved
-wordCount: 1728
-charCount: 7061
+wordCount: 1714
+charCount: 6591
 imgCount: 8
 vidCount: 0
 wsCount: 0
-cbCount: 0
+cbCount: 2
 date: 2024-01-22 18:50:26
 ---
 ![Mang lag qua khong load duoc anh nay, sorry](/images/Tai-sao-lai-dung-backend/WHY.png)

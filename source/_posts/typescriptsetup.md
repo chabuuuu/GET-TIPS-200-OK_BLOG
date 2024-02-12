@@ -5,15 +5,15 @@ tags:
   - typescript
 categories:
   - backend
-readTime: About 11 minutes
+readTime: About 8 minutes
 cover_image: /images/typescriptsetup/typescript-nodejs.png
 license: all_rights_reserved
-wordCount: 2325
-charCount: 26912
+wordCount: 1642
+charCount: 7838
 imgCount: 5
 vidCount: 0
-wsCount: 2
-cbCount: 0
+wsCount: 19
+cbCount: 31
 date: 2023-10-22 17:54:57
 ---
 

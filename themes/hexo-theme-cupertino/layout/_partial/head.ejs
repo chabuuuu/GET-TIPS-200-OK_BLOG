@@ -2,6 +2,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"> -->
+<script>
+  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  console.log('theme:::', prefersDarkMode);
+    const theme = prefersDarkMode ? 'github-dark' : 'xcode';
+    console.log(theme);
+    // Thêm đường link đến theme phù hợp
+    const themeLink = document.createElement('link');
+    themeLink.rel = 'stylesheet';
+    themeLink.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${theme}.min.css`;
+    document.head.appendChild(themeLink);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+<style>
+  .hljs {
+    font-family: 'Monaco', monospace;;
+    font-size: 16px; /* Thay đổi giá trị này theo mong muốn của bạn */
+    font-weight:normal;
+  }
+</style>
+<script>
+  
+  hljs.highlightAll();</script>
   <%
   var title = page.title;
 

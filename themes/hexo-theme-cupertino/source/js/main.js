@@ -54,7 +54,17 @@
         set(value) {
             bodyEl.setAttribute('data-color-scheme', value)
             Cookies.set('color-scheme', value)
+            console.log('Theme change::: ', value)
+            let theme = 'github-dark'
+            if (value == 'light'){
+                theme = 'xcode'
+            }
+            const themeLink = document.createElement('link');
+            themeLink.rel = 'stylesheet';
+            themeLink.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${theme}.min.css`;
+            document.head.appendChild(themeLink);
             this.updateCurrent(value)
+
             return value
         }
         updateCurrent(value) {

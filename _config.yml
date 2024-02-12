@@ -48,7 +48,7 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   theme: atom-one-dark
   line_number: true
   auto_detect: false
