@@ -10,7 +10,7 @@ categories:
   - cloud service
   - aws
 readTime: About 12 minutes
-cover_image: /images/Cach-deploy-mysql-len-AWS-RDS/image-1.png
+cover_image: /images/Cach-deploy-mysql-len-AWS-RDS/thumbnail.png
 license: all_rights_reserved
 wordCount: 1438
 charCount: 7759
