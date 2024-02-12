@@ -1,13 +1,22 @@
 ---
-title: "Giải ngố cùng anh Liêm: Vì sao lại phải dùng backend? Sao không connect thẳng từ frontend tới database đi?"
-date: 2024-01-22 18:50:26
+title: >-
+  Giải ngố cùng anh Liêm: Vì sao lại phải dùng backend? Sao không connect thẳng
+  từ frontend tới database đi?
 tags:
-- backend
-- beginner-questions
+  - backend
+  - beginner-questions
 categories:
-- backend
-cover_image: "/images/Tai-sao-lai-dung-backend/WHY.png"
+  - backend
+readTime: About 9 minutes
+cover_image: /images/Tai-sao-lai-dung-backend/WHY.png
 license: all_rights_reserved
+wordCount: 1728
+charCount: 7061
+imgCount: 8
+vidCount: 0
+wsCount: 0
+cbCount: 0
+date: 2024-01-22 18:50:26
 ---
 ![Mang lag qua khong load duoc anh nay, sorry](/images/Tai-sao-lai-dung-backend/WHY.png)
 

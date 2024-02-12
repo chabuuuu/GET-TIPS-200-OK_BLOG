@@ -1,15 +1,24 @@
 ---
-title: "Cách deploy MySQL, PostgreSQL, SQL Server lên AWS RDS MIỄN PHÍ mà không mất tiền oan bằng tài khoản Free Tier"
-date: 2024-02-09 19:33:15
+title: >-
+  Cách deploy MySQL, PostgreSQL, SQL Server lên AWS RDS MIỄN PHÍ mà không mất
+  tiền oan bằng tài khoản Free Tier
 tags:
-- backend
-- deploy
-- aws
+  - backend
+  - deploy
+  - aws
 categories:
-- cloud service
-- aws
-cover_image: "/images/Cach-deploy-mysql-len-AWS-RDS/image-1.png"
+  - cloud service
+  - aws
+readTime: About 12 minutes
+cover_image: /images/Cach-deploy-mysql-len-AWS-RDS/image-1.png
 license: all_rights_reserved
+wordCount: 1438
+charCount: 7759
+imgCount: 36
+vidCount: 0
+wsCount: 0
+cbCount: 0
+date: 2024-02-09 19:33:15
 ---
 
 ![alt text](/images/Cach-deploy-mysql-len-AWS-RDS/thumbnail.png)

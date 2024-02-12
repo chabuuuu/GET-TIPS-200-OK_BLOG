@@ -1,9 +1,16 @@
 ---
 title: Lời nói đầu
-date: 2023-10-18 18:08:26
-cover_image: "/images/avatar.png"
-tags:
+cover_image: /images/avatar.png
 license: all_rights_reserved
+readTime: About 1 minute
+wordCount: 233
+charCount: 832
+imgCount: 0
+vidCount: 0
+wsCount: 0
+cbCount: 0
+date: 2023-10-18 18:08:26
+tags:
 ---
 Xin chào! Tôi là chabuuuu.
 

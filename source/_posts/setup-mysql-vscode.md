@@ -1,13 +1,22 @@
 ---
-title: Cách kết nối SQL Server với VSCode để tận dụng AI nhắc lệnh SQL và vô vàn món ăn chơi khác
-date: 2023-10-23 08:51:43
-tags: 
-- sqlserver
-- vscode
-categories: 
-- database
-cover_image: "/images/setup-mysql-vscode/thumbnail.png"
+title: >-
+  Cách kết nối SQL Server với VSCode để tận dụng AI nhắc lệnh SQL và vô vàn món
+  ăn chơi khác
+tags:
+  - sqlserver
+  - vscode
+categories:
+  - database
+cover_image: /images/setup-mysql-vscode/thumbnail.png
+readTime: About 4 minutes
 license: all_rights_reserved
+wordCount: 533
+charCount: 2650
+imgCount: 12
+vidCount: 0
+wsCount: 0
+cbCount: 0
+date: 2023-10-23 08:51:43
 ---
 
 Bạn mệt mỏi vì phải viết đi viết lại các câu lệnh SQL tương tự nhau rất nhiều lần? 
