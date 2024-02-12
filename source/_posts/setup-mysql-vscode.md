@@ -6,7 +6,7 @@ tags:
 - vscode
 categories: 
 - database
-thumbnail: "/images/setup-mysql-vscode/thumbnail.png"
+cover_image: "/images/setup-mysql-vscode/thumbnail.png"
 license: all_rights_reserved
 ---
 

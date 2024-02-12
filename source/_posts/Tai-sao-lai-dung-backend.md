@@ -6,7 +6,7 @@ tags:
 - beginner-questions
 categories:
 - backend
-thumbnail: "/images/Tai-sao-lai-dung-backend/WHY.png"
+cover_image: "/images/Tai-sao-lai-dung-backend/WHY.png"
 license: all_rights_reserved
 ---
 ![Mang lag qua khong load duoc anh nay, sorry](/images/Tai-sao-lai-dung-backend/WHY.png)

@@ -6,7 +6,7 @@ tags:
 - typescript
 categories:
 - backend
-thumbnail: "/images/typescriptsetup/typescript-nodejs.png"
+cover_image: "/images/typescriptsetup/typescript-nodejs.png"
 license: all_rights_reserved
 ---
 

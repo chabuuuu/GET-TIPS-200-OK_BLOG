@@ -1,6 +1,7 @@
 ---
 title: Lời nói đầu
 date: 2023-10-18 18:08:26
+cover_image: "/images/avatar.png"
 tags:
 license: all_rights_reserved
 ---

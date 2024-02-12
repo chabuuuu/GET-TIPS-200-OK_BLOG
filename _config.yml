@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: chabuuuu
+title: GET TIPS 200 OK
 subtitle: ''
 description: 'Blog đăng vớ vẩn linh tinh'
 keywords:
@@ -74,6 +74,11 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+#Search
+search:
+  path: search.json
+  field: post
+  content: true
 
 hexo_submit_urls_to_search_engine:
   submit_condition: count # Submitted condition, optional value: count | period, Now only supports count
@@ -121,7 +126,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: redefine
+theme: hexo-theme-cupertino
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

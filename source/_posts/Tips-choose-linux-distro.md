@@ -6,7 +6,7 @@ tags:
 - debian
 categories:
 - linux
-thumbnail: "/images/Tips-choose-linux-distro/thumbnail.png"
+cover_image: "/images/Tips-choose-linux-distro/thumbnail.png"
 license: all_rights_reserved
 ---
 
