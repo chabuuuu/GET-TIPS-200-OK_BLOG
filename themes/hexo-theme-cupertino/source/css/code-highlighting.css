@@ -38,21 +38,21 @@
         color: #7ee787;
     }
     .highlight .attr, .highlight .meta, .highlight .meta-keyword, .highlight .attribute, .highlight .number, .highlight .selector-class {
-        color: #79c0ff
+        color: #BB5F68
     }
     .highlight .string {
-        color: #a5d6ff;
+        color: #BB5F68;
     }
     .highlight .symbol {
-        color: #79b8ff;
+        color: #BB5F68;
     }
     .highlight .selector-tag {
         color: #7ee787;
     }
     .highlight .built_in {
-        color: #d2a8ff;
+        color: #E0BC79;
     }
     .highlight .keyword {
-        color: #ff7b72;
+        color: #C678DD;
     }
 }

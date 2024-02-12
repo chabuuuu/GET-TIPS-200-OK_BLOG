@@ -27,7 +27,7 @@ TypeScript ra đời bắt nguồn từ những thiếu sót của JavaScript đ
 
 Tôi học UIT, và ở đó tôi được học qua một môn có tên là Nhập môn lập trình, thì ở đó họ dạy tôi C++, cả sau này khi học các môn OOP hay DSA, ngôn ngữ sử dụng mà trường minh họa vẫn là C++. Và có vẻ như cũng có nhiều trường đại học giảng dạy C++ cho sinh viên như là một ngôn ngữ nền tảng, cho nên các bạn sẽ khá quen thuộc với cú pháp C++ như sau:
 
-```c++
+```cpp
 int age;
 string name;
 float score;

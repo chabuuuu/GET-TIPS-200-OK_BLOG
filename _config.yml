@@ -49,6 +49,7 @@ relative_link: false
 future: true
 highlight:
   enable: true
+  theme: atom-one-dark
   line_number: true
   auto_detect: false
   tab_replace: ''
@@ -56,9 +57,15 @@ highlight:
   hljs: false
 prismjs:
   enable: false
+  theme: 'okaidia'
   preprocess: true
   line_number: true
+  line_threshold: 0
   tab_replace: ''
+# prism_plugin:
+#   mode: 'preprocess'    # realtime/preprocess
+#   theme: 'default'
+#   line_number: true    # default false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
