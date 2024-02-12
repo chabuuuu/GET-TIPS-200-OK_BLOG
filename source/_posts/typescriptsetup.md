@@ -1,13 +1,20 @@
 ---
 title: Typescript trong Nodejs - Tại sao lại dùng và cách set up
-date: 2023-10-22 17:54:57
-tags: 
-- nodejs
-- typescript
+tags:
+  - nodejs
+  - typescript
 categories:
-- backend
-cover_image: "/images/typescriptsetup/typescript-nodejs.png"
+  - backend
+readTime: About 11 minutes
+cover_image: /images/typescriptsetup/typescript-nodejs.png
 license: all_rights_reserved
+wordCount: 2325
+charCount: 26912
+imgCount: 5
+vidCount: 0
+wsCount: 2
+cbCount: 0
+date: 2023-10-22 17:54:57
 ---
 
 ## 1. Về Typescript

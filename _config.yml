@@ -134,3 +134,20 @@ deploy:
 - type: cjh_google_url_submitter
 - type: cjh_bing_url_submitter
 - type: cjh_baidu_url_submitter
+
+giscus:
+  <script src="https://giscus.app/client.js"
+          data-repo="chabuuuu/Gitalk-GETTIPS200OK"
+          data-repo-id="R_kgDOKh_c4g"
+          data-category="General"
+          data-category-id="DIC_kwDOKh_c4s4CaPaK"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="noborder_gray"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>

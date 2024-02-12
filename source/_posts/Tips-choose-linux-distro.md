@@ -1,13 +1,20 @@
 ---
 title: Quá chán Ubuntu? Hãy đi tìm linux distro phù hợp với bạn!
-date: 2024-01-27 20:43:11
 tags:
-- linux
-- debian
+  - linux
+  - debian
 categories:
-- linux
-cover_image: "/images/Tips-choose-linux-distro/thumbnail.png"
+  - linux
+readTime: About 3 minutes
+cover_image: /images/Tips-choose-linux-distro/thumbnail.png
 license: all_rights_reserved
+wordCount: 531
+charCount: 2009
+imgCount: 4
+vidCount: 0
+wsCount: 0
+cbCount: 0
+date: 2024-01-27 20:43:11
 ---
 
 Tự nhiên đùng một cái, sáng ngủ dậy Ubuntu của bạn boot không lên nữa? Mặc dù bạn nhớ là bạn chẳng làm gì cả?

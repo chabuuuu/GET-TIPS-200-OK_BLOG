@@ -12,6 +12,12 @@ body {
   font-weight: 600;
 }
 
+.meta .readtime {
+  color: var(--grey);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
 .meta .categories a {
   font-size: 13px;
   margin-right: 6px;
@@ -43,6 +49,7 @@ body {
 .content h5,
 .content h6,
 .meta .categories,
+.meta .readtime,
 .meta .date,
 .content figure,
 /* only `.content>pre`, do not include <pre /> in <figure /> */
