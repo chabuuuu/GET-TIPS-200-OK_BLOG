@@ -47,7 +47,32 @@
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { this.updateCurrent(Cookies.get('color-scheme', 'auto')) })
         }
         get() {
+            console.log('Theme get::: ', Cookies.get('color-scheme', 'auto'));
+            const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            console.log('theme:::', prefersDarkMode);
+
+            
             const stored = Cookies.get('color-scheme', 'auto')
+            var current = 'light'
+            if (stored == 'auto') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    current = 'dark'
+                }
+            } else {
+                current = stored
+            }
+            let theme = 'github-dark'
+            if (current == 'light'){
+                theme = 'xcode'
+            }
+            //const theme = prefersDarkMode ? 'github-dark' : 'xcode';
+            console.log(theme);
+            // Thêm đường link đến theme phù hợp
+            const themeLink = document.createElement('link');
+            themeLink.rel = 'stylesheet';
+            themeLink.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${theme}.min.css`;
+            document.head.appendChild(themeLink);
             this.updateCurrent(stored)
             return stored
         }
@@ -58,6 +83,12 @@
             let theme = 'github-dark'
             if (value == 'light'){
                 theme = 'xcode'
+            }
+            const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const themeCookie = prefersDarkMode ? 'github-dark' : 'xcode';
+
+            if (value == themeCookie){
+
             }
             const themeLink = document.createElement('link');
             themeLink.rel = 'stylesheet';
