@@ -37,7 +37,7 @@ Các bạn chọn Add new Tag
 - Resources type các bạn có thể chọn như mình
 <br>
 
-### Application and OS /images/cach-tao-ec2-instance/1Images
+### Application and OS
 ![alt text](/images/cach-tao-ec2-instance/1image-2.png)
 Ở đây các bạn có thể chọn bất cứ Linux Distro nào các bạn muốn, ở đây tôi sẽ chọn Ubuntu Server cho dễ dùng nhé
 <br>
