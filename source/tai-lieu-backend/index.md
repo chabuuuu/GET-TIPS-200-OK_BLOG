@@ -15,6 +15,21 @@ Github repo: https://github.com/leonardomso/33-js-concepts
 33 Concept Javascript mà một lập trình viên Nodejs (hoặc Bun, sắp rồi) nên biết.
 ### 3. [javascript-algorithms](https://github.com/trekhleb/javascript-algorithms)
 Github repo: (https://github.com/trekhleb/javascript-algorithms)
+
+## System Design
+### 1. [Repo của kênh TipsJavascript](https://github.com/anonystick/anonystick/tree/main/Library/system.design)
+Tổng hợp các sách về system design rất hay
+
+### 2. [ByteByteGo System Interview Book](https://github.com/G33kzD3n/Catalogue/blob/master/System%20Design%20Interview%20An%20Insider%E2%80%99s%20Guide%20by%20Alex%20Xu%20(z-lib.org).pdf)
+Sách viết rất hay và dễ hiểu về system design của kênh Youtube ByteByteGo
+
+## Design Pattern
+### 1. [Refactoring.guru](https://refactoring.guru/design-patterns)
+Một web cực kì hay về các desgin pattern, với mô hình minh họa và code mẫu cực kì dễ hiểu
+
+### 2. [GP Coder](https://gpcoder.com/category/design-pattern/)
+Một web viết về các design pattern trong Java, và tất tần tật các kiến thức về Java backend
+
 ## Networking
 ### 1. [Networking fundamentals](https://www.youtube.com/watch?v=6hPMdpk9qA4&list=PLTk5ZYSbd9Mi_ya5tVFD8NFfU1YZOyml1&ab_channel=LearnCantrill)
 Sơ lược kiến thức về mạng máy tính
