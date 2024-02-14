@@ -13,7 +13,7 @@ readTime: About 12 minutes
 cover_image: /images/Cach-deploy-mysql-len-AWS-RDS/thumbnail.png
 license: all_rights_reserved
 wordCount: 1438
-charCount: 7759
+charCount: 7249
 imgCount: 36
 vidCount: 0
 wsCount: 0
@@ -31,7 +31,7 @@ Trong bài viết này tôi sẽ hướng dẫn mọi người cách deploy MySQ
 - <span style="color:#689CF7">Tài khoản AWS Free Tier</span>
 
 Đại khái là AWS sẽ miễn phí MỘT SỐ dịch vụ của họ cho các tài khoản mới đăng ký trong vòng 1 NĂM. Để đăng ký tài khoản này các bạn cần có 1 thẻ Visa để liên kết với AWS (cái này lúc đăng ký họ sẽ không lấy của bạn 1 đồng nào đâu, do vài chính sách của họ thôi). Và vấn đề của chúng ta phát sinh từ đây, và cũng là lý do bài viết này tồn tại: 2 chữ "FREE TIER".
-Vấn đề tôi muốn nói đó là dù là "FREE TIER" nhưng không hẳn tất cả đều miễn phí, bạn phải nắm thật rõ quy định charge phí của từng dịch vụ trong tài liệu [này](https://aws.amazon.com/free/?trk=f42fef03-b1e6-4841-b001-c44b4eccaf41&sc_channel=ps&ef_id=CjwKCAiAt5euBhB9EiwAdkXWO_DO0lp_HAMY8KPz_MNpq9wk5nIR_jhC_3bI5gmwskIozHrDahdxXhoCaIAQAvD_BwE:G:s&s_kwcid=AL!4422!3!637354294245!e!!g!!aws%20free%20tier!19044205571!139090166770&gclid=CjwKCAiAt5euBhB9EiwAdkXWO_DO0lp_HAMY8KPz_MNpq9wk5nIR_jhC_3bI5gmwskIozHrDahdxXhoCaIAQAvD_BwE&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
+Vấn đề tôi muốn nói đó là dù là "FREE TIER" nhưng không hẳn tất cả đều miễn phí, bạn phải nắm thật rõ quy định charge phí của từng dịch vụ trong tài liệu [này](https://aws.amazon.com/free)
 Mặt khác, trong bài viết này tôi sẽ hướng dẫn các bạn để không bị mắc phải các ngách bị tính phí
 
 Chi tiết cách đăng ký tài khoản AWS các bạn xem hướng dẫn [này](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html)
@@ -42,7 +42,7 @@ Chi tiết cách đăng ký tài khoản AWS các bạn xem hướng dẫn [này
 
 #### 1. Tạo RDS Instance
 ![alt text](/images/Cach-deploy-mysql-len-AWS-RDS/image123.png)
-Trước hết, các bạn hãy đăng nhập vào AWS Management Console tại [đây](https://console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin)
+Trước hết, các bạn hãy đăng nhập vào AWS Management Console tại [đây](https://console.aws.amazon.com/console/home)
 
 ![alt text](/images/Cach-deploy-mysql-len-AWS-RDS/image-1.png)
 
