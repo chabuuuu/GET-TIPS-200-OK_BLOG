@@ -46,13 +46,7 @@
         constructor() {
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { this.updateCurrent(Cookies.get('color-scheme', 'auto')) })
         }
-        get() {
-            console.log('Theme get::: ', Cookies.get('color-scheme', 'auto'));
-            const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            console.log('theme:::', prefersDarkMode);
-
-            
+        get() {            
             const stored = Cookies.get('color-scheme', 'auto')
             var current = 'light'
             if (stored == 'auto') {
@@ -66,8 +60,6 @@
             if (current == 'light'){
                 theme = 'xcode'
             }
-            //const theme = prefersDarkMode ? 'github-dark' : 'xcode';
-            console.log(theme);
             // Thêm đường link đến theme phù hợp
             const themeLink = document.createElement('link');
             themeLink.rel = 'stylesheet';
@@ -79,7 +71,6 @@
         set(value) {
             bodyEl.setAttribute('data-color-scheme', value)
             Cookies.set('color-scheme', value)
-            console.log('Theme change::: ', value)
             let theme = 'github-dark'
             if (value == 'light'){
                 theme = 'xcode'

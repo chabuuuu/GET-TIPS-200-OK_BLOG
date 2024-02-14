@@ -22,7 +22,12 @@
         <%- partial('_partial/nav') %>
         <%- body %>
         <%- partial('_partial/footer') %>
-
+        <br>
+        <span style="    margin-top: 12px;
+        margin-bottom: -12px; ">Visitor count:</span>
+        <span style="    margin-top: 12px;
+        margin-bottom: -12px;" class="s3_pv"></span>
+        
         <%- js('js/main.js') %>
         <% if (theme.search == true && page.type == 'search') { %>
         <%- js('js/search.js') %>
