@@ -9,7 +9,14 @@ vidCount: 0
 wsCount: 2
 cbCount: 2
 date: 2024-02-14 20:21:14
+categories:
+  - cloud service
+  - aws
 tags:
+  - backend
+  - deploy
+  - aws
+
 ---
 Bài post hôm nay tôi sẽ tạo một EC2 Instance bằng Free Tier, không mất đồng nào nhé
 ## 1. Chuẩn bị
