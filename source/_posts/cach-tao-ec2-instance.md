@@ -2,13 +2,12 @@
 title: 'AWS: Tạo EC2 Instace an toàn không mất tiền với Free Tier'
 cover_image: /images/cach-tao-ec2-instance/thumbnail.png
 readTime: About 10 minutes
-wordCount: 1162
-charCount: 5572
+wordCount: 1161
+charCount: 5535
 imgCount: 32
 vidCount: 0
 wsCount: 2
 cbCount: 2
-date: 2024-02-14 20:21:14
 categories:
   - cloud service
   - aws
@@ -16,7 +15,7 @@ tags:
   - backend
   - deploy
   - aws
-
+date: 2024-02-14 20:21:14
 ---
 Bài post hôm nay tôi sẽ tạo một EC2 Instance bằng Free Tier, không mất đồng nào nhé
 ## 1. Chuẩn bị
