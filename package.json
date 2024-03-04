@@ -31,6 +31,7 @@
     "hexo-tag-youtube-responsive": "^0.4.2",
     "hexo-theme-landscape": "^1.0.0",
     "highlight.js": "^11.9.0",
+    "lodash": "^4.17.21",
     "nodejieba": "^2.6.0",
     "prismjs": "^1.29.0"
   },
