@@ -1,12 +1,12 @@
 ---
 title: Tổng hợp các phương pháp bảo mật API NodeJS chống hacker lỏ
-wordCount: 1498
-charCount: 9205
-imgCount: 5
+wordCount: 2294
+charCount: 13976
+imgCount: 6
 vidCount: 1
-wsCount: 27
-cbCount: 18
-readTime: About 9 minutes
+wsCount: 34
+cbCount: 35
+readTime: About 12 minutes
 date: 2024-02-28 09:34:09
 tags:
 ---
@@ -321,3 +321,192 @@ Kết quả trả về sẽ là:
 }
 ```
 Vậy là phần script bị chèn vào trường test đã bị loại bỏ, và ngăn chặn được XSS Attack!
+
+## 6. Chống SQL Injection
+Lại là vấn đề SQL Injection, nếu chưa biết SQL Injection là gì, hãy tham khảo tại [đây](https://gettips200ok.netlify.app/comming-soon/)
+
+Phương pháp chống SQL Injection hiệu quả đó chính là sử dụng ORM
+
+ORM (Object Relational Mapping) nói nôm na là kỹ thuật giúp chuyển dữ liệu trong CSDL quan hệ sang đối tượng.
+
+Các ORM phổ biến trong NodeJS đó là [TypeORM](https://typeorm.io/), [Sequelize](https://sequelize.org/), [Prisma](https://www.prisma.io/), [Mongoose]()...
+
+Mặc định, các ORM này sẽ giúp chống SQL Injection, hơn thế nữa còn giúp code dễ nhìn và dễ tái sử dụng, vì bạn không phải gõ thẳng SQL vào trong source nữa.
+
+## 7. Giới hạn kích thước request
+Cũng là một giải pháp để chống DDOS và DOS bằng cách giới hạn kích thước request giúp bảo vệ server khỏi việc bị quá tải bởi các request lớn và gửi liên tục. Ngoài ra còn giảm áp lực cho server, những request lớn có thể chiếm nhiều tài nguyên hơn và làm giảm khả năng xử lý của server
+
+Để giới hạn kích thước body của request gửi lên server Nodejs, ta có thể dùng package [body-parser](https://www.npmjs.com/package/body-parser)
+
+```
+npm i body-parser
+```
+
+```
+const express = require('express');
+const bodyParser = require("body-parser");
+const app = express();
+
+//Dùng tại đây:
+app.use(bodyParser.json({ limit: "10kb" }));  //giới hạn request.body có size tối đa là 10kb
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(helmet());
+
+app.use('', async (req, res, next)=>
+{
+    res.send('Hello World');
+})
+app.listen(3000, () => console.log('Server running on port http://localhost:3000'));
+```
+## 8. Sử dụng Linter
+Linter là gì? Linter là một công cụ dùng để phân tích source để phát hiện những lỗi sai, bug, vi phạm lỗi sai viết code.
+Hầu như ngôn ngữ lập trình nào cũng có linter đi kèm: Python có Pylint, C# có FxCop hoặc StyleCop. JavaScript thì có JSHint, JSLint, ESLint.
+[Danh sách các linter ứng với ngôn ngữ lập trình](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis)
+Ở đây tôi sẽ sử dụng ESLint. Chi tiết sâu hơn cách sử dụng tôi sẽ để riêng trong bài viết [này](https://gettips200ok.netlify.app/comming-soon/)
+
+### Cài đặt ESLint
+```
+npm install eslint --save-dev
+```
+
+Tạo file cấu hình:
+```
+npx eslint --init
+```
+
+Giờ, để chạy ESLint kiểm tra toàn bộ source code của bạn, hãy gõ:
+```
+npx eslint .
+```
+
+Hãy lưu script này vào package.json để sau này tiện dùng:
+```
+"scripts": {
+  "lint": "eslint .",
+  "lint-fix": "eslint . --fix"
+}
+```
+Bây giờ bạn có thể chạy npm run lint để kiểm tra mã nguồn và npm run lint-fix để tự động sửa một số lỗi có thể tự động sửa được.
+
+Quay lại vấn đề chính, tôi sẽ giới thiệu cho bạn một plugin eslint tên là [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security)
+Trước hết, ta cài đặt package:
+```
+npm install --save-dev eslint-plugin-security
+```
+Sau đó, để cài plugin này vào ESLint, ta thực hiện tạo một file tên "eslint.config.js'
+```
+touch eslint.config.js
+```
+Các bạn bỏ code này vào:
+```
+const pluginSecurity = require('eslint-plugin-security');
+
+module.exports = [pluginSecurity.configs.recommended];
+```
+Đã xong, các bạn hãy chạy lại eslint để test thử:
+```
+npm run lint
+```
+
+Giờ tôi sẽ thử tạo source code vi phạm security rule của nó xem sẽ bị thông báo như nào nhé:
+```
+const express = require('express');
+
+const app = express();
+app.post('/data', (req, res) => {
+    console.log('Data received', req.body);
+    eval(req.body) //Vi phạm security rule, vì dùng eval như này sẽ rất dễ bị XSS Attack!
+    res.json({ message: 'Data received successfully', data: req.body });
+  });
+
+app.listen(3000, () => console.log('Server running on port http://localhost:3000'));
+```
+Chạy thử eslint:
+![alt text](/images/Tong-hop-phuong-phap-bao-mat-api-nodejs-chong-hacker/Screenshot_20240304_220811.png)
+
+## 9. Bắt buộc client truy cập bằng HTTPS
+HTTPS (HyperText Transfer Protocol Secure) là một dạng của giao thức HTTP sử dụng thêm tiêu chuẩn công nghệ có tên gọi là SSL (Secure Sockets Layer). Mục đích điều này là để mã hóa dữ liệu nhằm gia tăng tính an toàn và bảo mật trong việc truyền thông dữ liệu giữa máy chủ Web server và trình duyệt Web.
+Nói đơn giản, dùng HTTP là không an toàn, và dữ liệu người dùng có thể dễ bị rò rĩ!
+
+Vậy nên, ta sẽ sử dụng package [express-enforces-ssl](https://www.npmjs.com/package/express-enforces-ssl), package này sẽ buộc client phải truy cập bằng HTTPS
+```
+npm install express-enforces-ssl --save
+```
+
+```
+const express = require('express');
+const express_enforces_ssl = require('express-enforces-ssl');
+const app = express();
+
+app.use(express_enforces_ssl());
+
+app.use('', async (req, res, next)=>
+{
+    res.send('Hello World');
+
+})
+
+app.listen(3000, () => console.log('Server running on port http://localhost:3000'));
+```
+
+## 10. Ngăn chặn CSRF Attack
+CSRF là gì? Hãy xem ở [đây](https://viblo.asia/p/ky-thuat-tan-cong-csrf-va-cach-phong-chong-amoG84bOGz8P)
+Tóm tắt: CSRF là kiểu tấn công mà web hacker sẽ ăn cắp cookie từ một web T của bạn, và web hacker đó sẽ dùng cookie đó để tự do múa may quay cuồng trong web T đó bằng cookie của bạn.
+Giải pháp: dùng package [csurf](https://www.npmjs.com/package/csurf/v/1.7.0?activeTab=readme)
+Cài đặt:
+```
+npm i csurf
+```
+
+```
+const csrf = require("csurf");
+const csrfProtection = csrf({ cookie: true });
+app.use(csrfProtection);
+```
+## 11. Validate Input
+Rất quan trọng, ví dụ như validate password, validate email,...
+Tôi sẽ giới thiệu một package tuyệt vời để làm điểu này, đó là [class-validator
+](https://www.npmjs.com/package/class-validator)
+```
+npm i class-validator
+```
+
+```
+import {
+  validate,
+  validateOrReject,
+  Contains,
+  IsInt,
+  Length,
+  IsEmail,
+  IsFQDN,
+  IsDate,
+  Min,
+  Max,
+} from 'class-validator';
+
+export class Post {
+  @Length(10, 20)
+  title: string;
+
+  @Contains('hello')
+  text: string;
+
+  @IsInt()
+  @Min(0)
+  @Max(10)
+  rating: number;
+
+  @IsEmail()
+  email: string;
+
+  @IsFQDN()
+  site: string;
+
+  @IsDate()
+  createDate: Date;
+}
+```
+
+Cách dùng chi tiết bạn hãy xem blog [này](https://gettips200ok.netlify.app/comming-soon/) của tôi.
