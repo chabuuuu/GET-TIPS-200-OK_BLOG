@@ -1,12 +1,12 @@
 ---
 title: Tổng hợp các phương pháp bảo mật API NodeJS chống hacker lỏ
-wordCount: 1317
-charCount: 7898
+wordCount: 1498
+charCount: 9205
 imgCount: 5
-vidCount: 0
+vidCount: 1
 wsCount: 27
-cbCount: 14
-readTime: About 7 minutes
+cbCount: 18
+readTime: About 9 minutes
 date: 2024-02-28 09:34:09
 tags:
 ---
@@ -259,3 +259,65 @@ Trong corsOptions, ta có thể liệt kê các origin được phép truy cập
 
 Bây giờ thử test lại request từ frontend, bạn sẽ không thấy lỗi nữa.
 
+## [5. XSS Attack]
+Cross Site Scripting (XSS) là một dạng tấn công mã độc mà hacker sẽ chèn mã độc thông qua các đoạn script để thực thi chúng ở phía Client.
+Chi tiết bạn có thể xem qua video sau:
+  {% youtuber video 3_BfecB1Dqk %}
+    height: 300
+    width: 100%
+  {% endyoutuber %}
+
+Một trong những cách phổ biến để ngăn chặn loại tấn công trên đó là validate lại dữ liệu được gửi lên từ client.
+Tôi giới thiệu package sau: [Express XSS Sanitizer](https://www.npmjs.com/package/express-xss-sanitizer?activeTab=readme)
+Package này thực chất dựa trên [sanitize-html](https://www.npmjs.com/package/sanitize-html)
+
+### Cài đặt
+```
+npm i express-xss-sanitizer
+```
+
+```
+const express = require('express');
+const {xss} = require("express-xss-sanitizer");
+const app = express();
+
+app.use(express.json());
+app.use(
+    express.urlencoded({
+        extended: true,
+    }),
+);
+
+app.use(xss())
+app.post('/data', (req, res) => {
+    console.log('Data received', req.body);
+    res.json({ message: 'Data received successfully', data: req.body });
+  });
+
+app.use('', async (req, res, next)=>
+{
+    res.send('Hello World');
+
+})
+
+
+app.listen(3000, () => console.log('Server running on port http://localhost:3000'));
+```
+Bây giờ, bạn hãy thử dùng Postman hoặc curl gửi request như sau:
+```
+curl --location 'localhost:3000/data' \
+--data-urlencode 'test="<script>alert('\''XSS Attack!'\'');</script>"' \
+--data-urlencode 'normal=hello'
+```
+Kết quả trả về sẽ là:
+```
+{
+"message":"Data received successfully",
+"data":
+    {
+    "test":"\"\"",
+    "normal":"hello"
+    }
+}
+```
+Vậy là phần script bị chèn vào trường test đã bị loại bỏ, và ngăn chặn được XSS Attack!
