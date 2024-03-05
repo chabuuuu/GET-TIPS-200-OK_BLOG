@@ -1,14 +1,22 @@
 ---
 title: Tổng hợp các phương pháp bảo mật API NodeJS chống hacker lỏ
-wordCount: 2337
-charCount: 14147
-imgCount: 6
+wordCount: 2809
+charCount: 16847
+imgCount: 8
 vidCount: 1
-wsCount: 35
-cbCount: 35
-readTime: About 13 minutes
-date: 2024-02-28 09:34:09
+wsCount: 41
+cbCount: 43
+readTime: About 15 minutes
+cover_image: >-
+  /images/Tong-hop-phuong-phap-bao-mat-api-nodejs-chong-hacker/photo_2024-03-05_22-17-39.jpg
 tags:
+  - api security
+  - backend
+  - base
+categories:
+  - backend
+  - nodejs
+date: 2024-02-28 09:34:09
 ---
 Hôm nay tôi sẽ làm một bài viết tổng hợp các phương pháp, các package thường dùng để bảo mật API NodeJS trong thực tế.
 
@@ -259,7 +267,7 @@ Trong corsOptions, ta có thể liệt kê các origin được phép truy cập
 
 Bây giờ thử test lại request từ frontend, bạn sẽ không thấy lỗi nữa.
 
-## [5. XSS Attack]
+## 5. XSS Attack
 Cross Site Scripting (XSS) là một dạng tấn công mã độc mà hacker sẽ chèn mã độc thông qua các đoạn script để thực thi chúng ở phía Client.
 Chi tiết bạn có thể xem qua video sau:
   {% youtuber video 3_BfecB1Dqk %}
@@ -514,3 +522,110 @@ Cách dùng chi tiết bạn hãy xem blog [này](https://gettips200ok.netlify.a
 ## 12. Validate Output
 Có validate output rồi thì phải có validate output, mục đích chủ yếu cũng là để tránh XSS,.. bằng cách validate lại output xem có script tào lao nào được trả về cho client hay không.
 Một số package hữu dụng:
+
+## 13. Hash Password, và những thứ quan trọng
+Sẽ ra sao nếu một ngày nào đó hacker nắm được db của bạn? Đó là lý do ta nên mã hóa những dữ liệu quan trọng của người dùng trước khi đưa vào db.
+
+Một package nổi tiếng để làm điều này đó là [Bcrypt](https://www.npmjs.com/package/bcrypt)
+Chi tiết hơn về hashing các bạn hãy xem bài post [này](https://gettips200ok.netlify.app/comming-soon/)
+
+### Cài đặt 
+```
+npm i bcrypt
+```
+
+```
+const express = require("express");
+const app = express();
+
+//Bcrypt
+const bcrypt = require('bcrypt');
+
+app.post("/login", async (req, res) => {
+  const password = req.body.password;
+  const saltRounds = 10;
+  await bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(password, salt, function(err, hash) {
+        res.send(hash);
+    });
+});
+});
+
+app.listen(3000, () =>
+  console.log("Server running on port http://localhost:3000")
+);
+
+```
+
+Giờ hãy gõ lệnh curl sau:
+```
+curl --location 'http://localhost:3000/login' \
+--data-urlencode 'password=hello'
+```
+
+Các bạn sẽ thấy password đã được hashing:
+```
+$2b$10$cX/iW7kWYlDwJmmZQbbVbO/LrHVSCCG2perZD8KPh0whBVPnYCoy.
+```
+
+Giờ hãy lưu password đã hash này vào db, và bạn không phải lo nếu ai đó nắm db làm lộ pass.
+
+## 14. Luôn handle error trước khi trả về người dùng
+Điều cơ bản và luôn luôn phải làm, chẳng ai lại show ra cả dòng lỗi của sql ra màn hình cả! Vì như vậy rất dễ lộ những thông tin quan trọng.
+
+Để làm điều này, bạn hãy chú ý đọc doc của các ORM, xem các mã lỗi như thế nào để biết cách handle error.
+
+Đối với các lỗi về validate, luôn phải hanlde và trả về đúng cách message lỗi.
+
+Bài viết về handle error bạn hãy xem blog [này](https://gettips200ok.netlify.app/comming-soon/)
+
+## 15. Sử dụng file .env
+
+File .env là gì? Đó là một file mà NodeJS sẽ load mỗi khi chạy, và tất nhiên nó không bị set cứng trong source code.
+
+Hãy bỏ những <strong>secret key</strong>, ví dụ như SecretKey của VNPAY, SecretKey của JWT, hãy đưa vào file .env như này:
+
+```
+JWT_SECRET = "dasdasfadfds" //Your JWT Secret Key
+JWT_EXPIRES_IN="120h"   //JWT Expire Time
+
+DATABASE_URL="" //Your database connection string
+
+EMAIL_USERNAME=""  //Your email address for sending verify email feature
+EMAIL_PASSWORD="sadcxzc"  //Your google password, get by going to google setting and get 3rd app password
+
+ROOT="http://localhost:3000/root" //Your root url
+
+EMAIL_TOKEN_EXPIRE="120000"   //Expire time of email verify token (in ms)
+```
+
+Và đừng quên thêm .env vào .gitignore, vì lỡ như bạn public repo github thì việc bạn bỏ secret key vào .env cũng như không:
+```
+#.gitignore
+/.env
+```
+
+## 16. Compression
+Compression: nén file, là một kĩ thuật làm giảm size của các file lớn, ví dụ như ảnh, video,.. và có thể là cả JSON Response nếu nó quá nhiều.
+ Một package tuyệt vời với hơn 19M lượt down mỗi tuần: [compression](https://www.npmjs.com/package/compression)
+
+### Cài đặt
+```
+npm i compression
+```
+
+Sử dụng rất đơn giản:
+```
+const compression = require('compression')
+app.use(compression())
+```
+
+### Kết quả
+Trước khi compression:
+![alt text](/images/Tong-hop-phuong-phap-bao-mat-api-nodejs-chong-hacker/Screenshot_20240305_220235.png) 
+Và boom, sau đó:
+![alt text](/images/Tong-hop-phuong-phap-bao-mat-api-nodejs-chong-hacker/Screenshot_20240305_220321.png)
+
+Từ 100mb xuống còn 100b, quá tuyệt vời!
+
+Trên đây là list các package nên đưa vào mọi dự án NodeJS, có thể nhiều cái bạn không cần, nhưng đã dính đến vấn để security thì thà thừa còn hơn bỏ sót.
