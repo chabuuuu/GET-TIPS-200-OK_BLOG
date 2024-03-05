@@ -1,7 +1,7 @@
 ---
 title: Tổng hợp các phương pháp bảo mật API NodeJS chống hacker lỏ
-wordCount: 2809
-charCount: 16847
+wordCount: 2812
+charCount: 16905
 imgCount: 8
 vidCount: 1
 wsCount: 41
@@ -629,3 +629,5 @@ Và boom, sau đó:
 Từ 100mb xuống còn 100b, quá tuyệt vời!
 
 Trên đây là list các package nên đưa vào mọi dự án NodeJS, có thể nhiều cái bạn không cần, nhưng đã dính đến vấn để security thì thà thừa còn hơn bỏ sót.
+
+Github repo: https://github.com/chabuuuu/NodeJS-API-Security
