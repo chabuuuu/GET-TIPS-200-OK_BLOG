@@ -1,12 +1,12 @@
 ---
 title: Tổng hợp các phương pháp bảo mật API NodeJS chống hacker lỏ
-wordCount: 2294
-charCount: 13976
+wordCount: 2337
+charCount: 14147
 imgCount: 6
 vidCount: 1
-wsCount: 34
+wsCount: 35
 cbCount: 35
-readTime: About 12 minutes
+readTime: About 13 minutes
 date: 2024-02-28 09:34:09
 tags:
 ---
@@ -510,3 +510,7 @@ export class Post {
 ```
 
 Cách dùng chi tiết bạn hãy xem blog [này](https://gettips200ok.netlify.app/comming-soon/) của tôi.
+
+## 12. Validate Output
+Có validate output rồi thì phải có validate output, mục đích chủ yếu cũng là để tránh XSS,.. bằng cách validate lại output xem có script tào lao nào được trả về cho client hay không.
+Một số package hữu dụng:
