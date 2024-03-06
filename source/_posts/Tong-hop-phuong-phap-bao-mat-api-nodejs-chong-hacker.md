@@ -7,8 +7,7 @@ vidCount: 1
 wsCount: 41
 cbCount: 43
 readTime: About 15 minutes
-cover_image: >-
-  /images/Tong-hop-phuong-phap-bao-mat-api-nodejs-chong-hacker/photo_2024-03-05_22-17-39.jpg
+cover_image: /images/Tong-hop-phuong-phap-bao-mat-api-nodejs-chong-hacker/photo_2024-03-06_20-32-41.jpg
 tags:
   - api security
   - backend
