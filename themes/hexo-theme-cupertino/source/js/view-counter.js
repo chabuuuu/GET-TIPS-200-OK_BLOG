@@ -163,7 +163,7 @@ SITESCANSENSE.prototype = {
       this.payload.longitude = t.longitude;
     }
     fetch(this.endpoint + this.payload.search, {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -176,6 +176,7 @@ SITESCANSENSE.prototype = {
   },
   setbpcounter: function (e) {
     console.log('views::: ',e);
+    var temp_post_view = e.page_pv;
     let t = document.querySelectorAll(".s3_pv");
     let n = document.querySelectorAll(".s3_uv");
     let o = document.querySelectorAll(".s3_total_pv");
