@@ -78,7 +78,7 @@ function SITESCANSENSE(t) {
 }
 SITESCANSENSE.prototype = {
   payload: {
-    id: encodeURI(`${server}/${home_post_counter_path}`),
+    id: encodeURI(`${server}${home_post_counter_path}`),
     uid: (function () {
       var e = "sitescansense_visitorid";
       var t = "localStorage";
@@ -112,7 +112,7 @@ SITESCANSENSE.prototype = {
       }
     })()(),
     title: home_post_counter_title,
-    href: `${server}/${home_post_counter_path}`,
+    href: `${server}${home_post_counter_path}`,
     origin: window.location.origin,
     host: window.location.host,
     hostname: window.location.hostname,
