@@ -63,6 +63,7 @@ nav:
     Devops: /tai-lieu-devops
     IoT: /comming-soon
     AI: /comming-soon
+    Archives: /archives/
     Categories: /categories/ 
     Tags: /tags/ 
     # # these items will display as a link
@@ -73,6 +74,7 @@ nav:
     # # these will be automatically be an icon
     GitHub: https://github.com/chabuuuu
     Facebook: https://www.facebook.com/bu.chan0310
+    Youtube: https://youtube.com/@chabu4877
     # Patreon: https://www.patreon.com/MrWillCom
     # Mastodon: https://noc.social/@MrWillCom
     # Discord: https://discord.gg/UKuFDjcfY8
@@ -105,7 +107,7 @@ footer:
     Linkedin: https://www.linkedin.com/in/thinhhaphu33/
     Portfolio: https://bento.me/haphuthinh
     Email: mailto:haphuthinh332004@gmail.com
-    Youtube: https://youtube.com/@chabu4877?si=StA3QKeOsEmQAE8T
+    Youtube: https://youtube.com/@chabu4877
 
 
 
