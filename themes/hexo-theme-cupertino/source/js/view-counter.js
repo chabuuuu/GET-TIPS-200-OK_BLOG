@@ -172,9 +172,10 @@ SITESCANSENSE.prototype = {
     })
       .then((t) => t.json())
       .then((t) => this.setbpcounter(t))
-      .catch((t) => console.log('views::: ',t));
+      .catch((t) => console.log(t));
   },
   setbpcounter: function (e) {
+    console.log('views::: ',e);
     let t = document.querySelectorAll(".s3_pv");
     let n = document.querySelectorAll(".s3_uv");
     let o = document.querySelectorAll(".s3_total_pv");
