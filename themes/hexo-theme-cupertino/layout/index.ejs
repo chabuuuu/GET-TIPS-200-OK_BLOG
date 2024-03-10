@@ -40,21 +40,6 @@
                         <span><%= ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][post.date.month()] %></span>
                         <span>&nbsp;<%- post.date.date() %>,&nbsp;</span>
                         <span><%- post.date.year() %></span>
-
-
-                        <!-- show view counts -->
-                        <script>
-                            var home_post_counter_path =  `<%= url_for(post.path) %>`    
-                            var home_post_counter_title = `<%= post.title %>`
-                        </script>
-                        <%- js('js/view-counter.js') %>
-
-                        <span style="margin-left: auto;
-                                        display: flex;
-                                        align-items: center;">
-                            <span class="s3_pv"></span>
-                            <%- post.path%>
-                        </span>
                     </div>
                     <% } %>
                 </div>

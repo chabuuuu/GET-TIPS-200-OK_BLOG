@@ -1,5 +1,5 @@
 "use strict";
-const server = 'https://gettips200ok.netlify.app/'
+var server = 'https://gettips200ok.netlify.app/'
 function TOTP(t, e = 6) {
   this.key = t;
   this.digits = e;
@@ -163,7 +163,7 @@ SITESCANSENSE.prototype = {
       this.payload.longitude = t.longitude;
     }
     fetch(this.endpoint + this.payload.search, {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -176,7 +176,7 @@ SITESCANSENSE.prototype = {
   },
   setbpcounter: function (e) {
     console.log('views::: ',e);
-    var temp_post_view = e.page_pv;
+    var temp_post_view = e.page_pv.toString();
     let t = document.querySelectorAll(".s3_pv");
     let n = document.querySelectorAll(".s3_uv");
     let o = document.querySelectorAll(".s3_total_pv");
