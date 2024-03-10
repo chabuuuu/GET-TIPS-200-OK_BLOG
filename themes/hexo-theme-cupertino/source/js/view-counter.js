@@ -78,7 +78,7 @@ function SITESCANSENSE(t) {
 }
 SITESCANSENSE.prototype = {
   payload: {
-    id: encodeURI(`${server}${home_post_counter_path}`),
+    id: encodeURI(`${server}${home_post_counter_path}`.toLowerCase()),
     uid: (function () {
       var e = "sitescansense_visitorid";
       var t = "localStorage";
@@ -111,12 +111,12 @@ SITESCANSENSE.prototype = {
         );
       }
     })()(),
-    title: home_post_counter_title,
-    href: `${server}${home_post_counter_path}`,
+    title: home_post_counter_title + ' - GET TIPS 200 OK',
+    href: `${server}${home_post_counter_path}`.toLowerCase(),
     origin: window.location.origin,
     host: window.location.host,
     hostname: window.location.hostname,
-    pathname: `/${home_post_counter_path}`,
+    pathname: `${home_post_counter_path}`.toLowerCase(),
     search: window.location.search,
     port: window.location.port,
     protocol: window.location.protocol,

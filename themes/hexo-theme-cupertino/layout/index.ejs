@@ -44,7 +44,7 @@
 
                         <!-- show view counts -->
                         <script>
-                            var home_post_counter_path =  `<%= post.path %>`    
+                            var home_post_counter_path =  `<%= url_for(post.path) %>`    
                             var home_post_counter_title = `<%= post.title %>`
                         </script>
                         <%- js('js/view-counter.js') %>
