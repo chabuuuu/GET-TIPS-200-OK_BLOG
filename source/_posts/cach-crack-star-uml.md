@@ -13,7 +13,7 @@ tags:
 ---
 ![alt text](/images/cach-crack-star-uml/image.png)
 Star UML là một app dùng để vẽ UML rất tiện, nhưng tất nhiên là tốn phí.
-May mắn thay, con app này viết bằng ElectroJS, nên việc crack là rất dễ đối với chúng ta.
+May mắn thay, con app này viết bằng ElectronJS, nên việc crack là rất dễ đối với chúng ta.
 
 ## Cài đặt StarUML
 Trươc hết các bạn cài bản chính chủ tại đây: https://staruml.io/
