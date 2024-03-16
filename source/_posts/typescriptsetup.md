@@ -9,7 +9,7 @@ readTime: About 8 minutes
 cover_image: /images/typescriptsetup/typescript-nodejs.png
 license: all_rights_reserved
 wordCount: 1642
-charCount: 7838
+charCount: 7840
 imgCount: 5
 vidCount: 0
 wsCount: 19
@@ -182,7 +182,7 @@ Bạn hãy config file tsconfig thành thế này:
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "esModuleInterop":true,
-    "outDir"    : "js",
+    "outDir"    : "dist",
   },
   "include": [
     "src/**/*.ts"

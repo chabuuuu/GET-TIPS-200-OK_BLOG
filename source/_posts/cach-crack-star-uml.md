@@ -1,8 +1,9 @@
 ---
 title: Cách crack Star UML và các app viết bằng ElectronJS nói chung
 cover_image: /images/cach-crack-star-uml/image.png
+categories: 'small tips'
 wordCount: 299
-charCount: 1641
+charCount: 1642
 imgCount: 5
 vidCount: 0
 wsCount: 4
