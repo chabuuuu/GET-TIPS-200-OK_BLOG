@@ -1,5 +1,6 @@
 ---
 title: "Elasticseach và PostgreSQL: phân tích các chiến lược đồng bộ dữ liệu"
+cover_image: /images/elastic-postgres-sync-strategies/elastic-sync-thumbnail.png
 tags:
   - backend
   - elasticseach
