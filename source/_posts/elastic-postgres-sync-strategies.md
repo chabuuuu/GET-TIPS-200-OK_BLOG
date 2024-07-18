@@ -1,5 +1,5 @@
 ---
-title: 'Elasticseach và PostgreSQL: phân tích các chiến lược đồng bộ dữ liệu'
+title: "Elasticseach và PostgreSQL: phân tích các chiến lược đồng bộ dữ liệu"
 tags:
   - backend
   - elasticseach
@@ -42,6 +42,8 @@ Ngoài ra, lý do ta nên sử dụng Elasticsearch đó là vì:
   Chi tiết hãy xem bài viết [này](https://rabiloo.com/vi/blog/thuat-toan-score-danh-gia-xep-hang-trong-elasticsearch).
 
 ## Vấn đề đồng bộ dữ liệu
+
+![image](images/elastic-postgres-sync-strategies/elasticsearch-la-gi.png)
 
 Đúng vậy, tuy Elasticsearch có rất nhiều ưu điểm, tuy nhiên chúng ta sẽ gặp phải vấn đề về động bộ dữ liệu, ví dụ như giữa dữ liệu đang có trên database, làm thế nào để đồng bộ nó lên Elasticsearch?
 
