@@ -16,6 +16,7 @@ tags:
   - deploy
   - aws
 date: 2024-02-14 20:21:14
+"description": "Tạo AWS EC2 Instance quá dễ dàng - GET TIPS 200 OK"
 ---
 Bài post hôm nay tôi sẽ tạo một EC2 Instance bằng Free Tier, không mất đồng nào nhé
 ## 1. Chuẩn bị

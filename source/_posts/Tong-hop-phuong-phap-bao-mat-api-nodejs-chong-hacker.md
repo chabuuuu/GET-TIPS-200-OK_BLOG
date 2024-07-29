@@ -16,6 +16,7 @@ categories:
   - backend
   - nodejs
 date: 2024-02-28 09:34:09
+description: "Những thứ nên setup ngay trước khi start mọi dự án backend - GET TIPS 200 OK"
 ---
 Hôm nay tôi sẽ làm một bài viết tổng hợp các phương pháp, các package thường dùng để bảo mật API NodeJS trong thực tế.
 

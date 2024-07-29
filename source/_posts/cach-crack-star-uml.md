@@ -11,6 +11,7 @@ cbCount: 8
 readTime: About 2 minutes
 date: 2024-03-16 13:20:56
 tags:
+description: "Xem liền để làm đồ án môn công nghệ phần mềm nè - GET TIPS 200 OK"
 ---
 ![alt text](/images/cach-crack-star-uml/image.png)
 Star UML là một app dùng để vẽ UML rất tiện, nhưng tất nhiên là tốn phí.

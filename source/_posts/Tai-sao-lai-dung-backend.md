@@ -17,6 +17,7 @@ vidCount: 0
 wsCount: 0
 cbCount: 2
 date: 2024-01-22 18:50:26
+description: "Giải ngố cùng anh Liên #1 - GET TIPS 200 OK"
 ---
 ![Mang lag qua khong load duoc anh nay, sorry](/images/Tai-sao-lai-dung-backend/WHY.png)
 

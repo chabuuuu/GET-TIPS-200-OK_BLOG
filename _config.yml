@@ -4,12 +4,12 @@
 
 # Site
 title: GET TIPS 200 OK
-subtitle: ''
+subtitle: 'GET TIPS 200 OK - Blog về tất cả mọi thứ'
 description: 'Blog đăng vớ vẩn linh tinh'
-keywords:
+keywords: ['blog', 'tips', '200ok', 'backend', 'haphuthinh', 'chabu', 'devops', 'gettips200ok', 'get tips 200 ok']
 author: haphuthinh
 language: vn
-timezone: ''
+timezone: 'Asia/Ho_Chi_Minh'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

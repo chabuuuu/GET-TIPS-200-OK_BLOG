@@ -12,6 +12,7 @@ wsCount: 1
 cbCount: 4
 readTime: About 3 minutes
 date: 2024-05-01 08:55:23
+description: "Không phải mất tiền thuê dịch vụ sms bên thứ 3 nữa => Biến điện thoại cá nhân thành SMS Gateway - GET TIPS 200 OK"
 ---
 
 ![alt text](/images/bien-dien-thoai-thanh-sms-gateway-tan-dung-lam-service-send-otp/thumbnail.jpg)

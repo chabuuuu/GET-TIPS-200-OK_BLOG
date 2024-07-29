@@ -82,6 +82,7 @@
                     <% for (const i in og) { %>
                       <meta property="og:<%= i %>" content="<%= og[i] %>" />
                       <% } %>
+                      <meta name="description" content="<%= page.description ? page.description : 'GET TIPS 200 OK: Trang blog chia sẻ tất tần tật mọi thứ tips về Backend, Devops, System Design,...'  %>" />
                         <% } %>
 
                           <%- css('css/var') %>

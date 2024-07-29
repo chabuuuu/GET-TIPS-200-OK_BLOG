@@ -1,5 +1,5 @@
 ---
-title: "Elasticseach và PostgreSQL: phân tích các chiến lược đồng bộ dữ liệu"
+title: 'Elasticseach và PostgreSQL: phân tích các chiến lược đồng bộ dữ liệu'
 cover_image: /images/elastic-postgres-sync-strategies/elastic-sync-thumbnail.png
 tags:
   - backend
@@ -11,14 +11,15 @@ tags:
   - postgresql
 categories:
   - backend
-wordCount: 1798
-charCount: 12424
-imgCount: 12
+wordCount: 1799
+charCount: 12497
+imgCount: 13
 vidCount: 0
 wsCount: 19
 cbCount: 1
 readTime: About 10 minutes
 date: 2024-07-18 10:50:25
+description: "Chúng ta sẽ gặp phải vấn đề về đồng bộ dữ liệu, ví dụ như giữa dữ liệu đang có trên database, làm thế nào để đồng bộ nó lên Elasticsearch? - GET TIPS 200 OK"
 ---
 
 ## Elasticsearch là gì?
