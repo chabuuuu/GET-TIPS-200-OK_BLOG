@@ -19,6 +19,7 @@ vidCount: 0
 wsCount: 0
 cbCount: 0
 date: 2024-02-09 19:33:15
+description: "Deploy database lên AWS RDS quá dễ dàng - GET TIPS 200 OK"
 ---
 
 ![alt text](/images/Cach-deploy-mysql-len-AWS-RDS/thumbnail.png)

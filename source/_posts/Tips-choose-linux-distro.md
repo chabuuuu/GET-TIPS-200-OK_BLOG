@@ -15,6 +15,7 @@ vidCount: 0
 wsCount: 0
 cbCount: 0
 date: 2024-01-27 20:43:11
+description: "Distro nào là phù hợp nhất - GET TIPS 200 OK"
 ---
 
 Tự nhiên đùng một cái, sáng ngủ dậy Ubuntu của bạn boot không lên nữa? Mặc dù bạn nhớ là bạn chẳng làm gì cả?

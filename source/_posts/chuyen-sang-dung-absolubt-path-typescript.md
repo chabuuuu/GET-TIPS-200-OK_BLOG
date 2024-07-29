@@ -15,6 +15,7 @@ wsCount: 1
 cbCount: 9
 readTime: About 3 minutes
 date: 2024-03-16 15:07:35
+description: "Giúp source của bạn trông đẹp hơn! - GET TIPS 200 OK"
 ---
 ![alt text](/images/chuyen-sang-dung-absolubt-path-typescript/image-2.png)
 ## Absolute path là gì và tại sao lại dùng?

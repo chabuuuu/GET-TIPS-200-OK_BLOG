@@ -15,6 +15,7 @@ vidCount: 0
 wsCount: 19
 cbCount: 31
 date: 2023-10-22 17:54:57
+description: "Cách setup Typescript với NodeJS - GET TIPS 200 OK"
 ---
 
 ## 1. Về Typescript

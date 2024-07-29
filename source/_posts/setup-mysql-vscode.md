@@ -17,6 +17,7 @@ vidCount: 0
 wsCount: 0
 cbCount: 0
 date: 2023-10-23 08:51:43
+description: "Dùng VS CODE làm SQL Editor - GET TIPS 200 OK"
 ---
 
 Bạn mệt mỏi vì phải viết đi viết lại các câu lệnh SQL tương tự nhau rất nhiều lần? 
