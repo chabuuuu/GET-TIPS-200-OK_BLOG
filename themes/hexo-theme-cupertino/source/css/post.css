@@ -356,3 +356,96 @@ body[data-color-scheme="dark"] .tags .icon {
   margin-bottom: 4px;
   color: var(--grey);
 }
+.container.recommend-posts {
+  margin-top: 20px;
+  position: relative;
+}
+
+.recommend-posts-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding: 10px;
+}
+
+.recommend-posts-carousel::-webkit-scrollbar {
+  display: none; /* Ẩn scrollbar */
+}
+
+.recommend-post {
+  flex: 0 0 auto; /* Đảm bảo các phần tử nằm ngang */
+  width: 150px;
+  text-align: center;
+}
+
+.recommend-post img.thumbnail {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+
+
+#rating-section {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  background: #f9f9f900;
+}
+
+#rating-stars span {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+#rating-stars span.active {
+  color: gold;
+}
+
+#submit-rating {
+  background-color: #5FAFFF; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline-block */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 12px; /* Rounded corners */
+  transition-duration: 0.4s; /* 0.4 second transition effect to hover state */
+  margin-top: 20px;
+}
+
+#submit-rating:hover {
+  background-color: white; /* White background on hover */
+  color: black; /* Black text on hover */
+}
