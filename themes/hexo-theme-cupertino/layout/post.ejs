@@ -86,6 +86,29 @@
         <% } else { %><a class="prev"></a><% } %>
     </div>
 
+    <div class="container recommend-posts">
+        <h2>Recommended Posts</h2>
+        <div class="recommend-posts-carousel" id="recommend-posts-carousel">
+            <!-- Các bài viết gợi ý sẽ được thêm vào đây bằng JavaScript -->
+        </div>
+        <button class="carousel-btn prev" id="carousel-prev">&#10094;</button>
+        <button class="carousel-btn next" id="carousel-next">&#10095;</button>
+
+
+    <!-- Phần đánh giá luôn hiển thị -->
+    <div id="rating-section">
+        <h4>Bạn thấy khuyến nghị này thế nào?</h4>
+        <div id="rating-stars">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+        <button id="submit-rating">Gửi đánh giá</button>
+    </div>
+    </div>
+
     <% if (!page.no_comments) { %>
         <% if (config.waline) { %>
         <div class="container">
