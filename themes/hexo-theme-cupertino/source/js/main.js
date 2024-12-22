@@ -323,5 +323,48 @@
         });
     });
     
+
+    //For you posts
     
+    document.addEventListener('DOMContentLoaded', async () => {
+        const forYouPostsContainer = document.getElementById('for-you-posts');
+
+        try {
+            const response = await fetch('http://localhost:8080/api/recommend-posts'); // Replace with your actual API endpoint
+            const recommendPosts = await response.json();
+
+            recommendPosts.forEach(post => {
+                const article = document.createElement('article');
+                article.className = 'post-list-item';
+                article.innerHTML = `
+                    <a href="${post.url}">
+                        ${post.thumbnail ? `<div class="cover-img">
+                            <img src="${post.thumbnail}" alt="${post.thumbnail_alt}">
+                        </div>` : ''}
+                        <div class="content">
+                            ${post.categories && post.categories.length ? `<div class="categories">
+                                ${post.categories.map(category => `<span>${category.name}</span>`).join('')}
+                            </div>` : ''}
+                            <div class="title">
+                                ${post.title}
+                            </div>
+                            ${post.excerpt ? `<div class="excerpt">
+                                ${post.excerpt}
+                            </div>` : ''}
+                            ${post.date ? `<div class="time">
+                                <span>${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][new Date(post.date).getMonth()]}</span>
+                                <span>&nbsp;${new Date(post.date).getDate()},&nbsp;</span>
+                                <span>${new Date(post.date).getFullYear()}</span>
+                            </div>` : ''}
+                        </div>
+                    </a>
+                `;
+                forYouPostsContainer.appendChild(article);
+            });
+        } catch (error) {
+            console.error('Failed to fetch recommended posts:', error);
+            forYouPostsContainer.innerHTML = '<p>Unable to load recommended posts at this time.</p>';
+        }
+    });
+
 })()
