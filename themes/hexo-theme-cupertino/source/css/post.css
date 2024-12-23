@@ -409,6 +409,16 @@ body[data-color-scheme="dark"] .tags .icon {
 }
 
 
+.recommend-title {
+  font-size: 16px;
+  line-height: 1.125;
+  font-weight: 600;
+  letter-spacing: .004em;
+  margin-bottom: 24px;
+  color: var(--card-title);
+}
+
+
 
 #rating-section {
   margin-top: 20px;

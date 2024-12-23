@@ -240,7 +240,7 @@
                     <div class="recommend-post">
                         <a href="${basePath}${post.id}">
                             <img src="${post.thumbnail}" alt="${post.title}" class="thumbnail">
-                            <h4 class="title">${post.title}</h4>
+                            <h4 class="recommend-title">${post.title}</h4>
                         </a>
                     </div>
                 `;
