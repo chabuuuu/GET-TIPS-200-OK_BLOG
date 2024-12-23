@@ -228,55 +228,17 @@
     const nextBtn = document.getElementById("carousel-next");
 
     try {
-      // const response = await fetch('http://localhost:8080/api/recommend-posts');
-      // const recommendPosts = await response.json();
+      const response = await fetch(`${BASE_URL}/posts/recommend?topN=10`);
+      const responseInJson = await response.json();
+      const recommendPosts = responseInJson.data;
+      const basePath = window.location.origin;
 
-      //Data mẫu tạm thời
-      const recommendPosts = [
-        {
-          title: "Post 1",
-          thumbnail:
-            "https://gettips200ok.netlify.app/images/wal-g-backup-database/thumbnail.png",
-          url: "/post/1",
-        },
-        {
-          title: "Post 2",
-          thumbnail:
-            "https://gettips200ok.netlify.app/images/so-sanh-orm-nodejs/image.png",
-          url: "/post/2",
-        },
-        {
-          title: "Post 2",
-          thumbnail:
-            "https://gettips200ok.netlify.app/images/so-sanh-orm-nodejs/image.png",
-          url: "/post/2",
-        },
-        {
-          title: "Post 2",
-          thumbnail:
-            "https://gettips200ok.netlify.app/images/so-sanh-orm-nodejs/image.png",
-          url: "/post/2",
-        },
-        {
-          title: "Post 2",
-          thumbnail:
-            "https://gettips200ok.netlify.app/images/so-sanh-orm-nodejs/image.png",
-          url: "/post/2",
-        },
-        {
-          title: "Post 2",
-          thumbnail:
-            "https://gettips200ok.netlify.app/images/so-sanh-orm-nodejs/image.png",
-          url: "/post/2",
-        },
-        // Thêm các post gợi ý khác...
-      ];
 
       // Render các bài viết gợi ý
       recommendPosts.slice(0, 10).forEach((post) => {
         const postElement = `
                     <div class="recommend-post">
-                        <a href="${post.url}">
+                        <a href="${basePath}${post.id}">
                             <img src="${post.thumbnail}" alt="${post.title}" class="thumbnail">
                             <h4 class="title">${post.title}</h4>
                         </a>
