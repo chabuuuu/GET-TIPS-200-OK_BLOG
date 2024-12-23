@@ -1,5 +1,5 @@
 (() => {
-  const BASE_URL = "http://localhost:3000/api/v1";
+  const BASE_URL = "http://152.42.232.101:9302/api/v1";
 
   var navEl = document.getElementById("theme-nav");
   navEl.addEventListener("click", (e) => {
