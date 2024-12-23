@@ -368,14 +368,16 @@
     const forYouPostsContainer = document.getElementById("for-you-posts");
 
     try {
-      const response = await fetch("http://localhost:8080/api/recommend-posts"); // Replace with your actual API endpoint
-      const recommendPosts = await response.json();
+      const response = await fetch(`${BASE_URL}/posts/recommend?topN=10`); // Replace with your actual API endpoint
+      const responseInJson = await response.json();
+      const recommendPosts = responseInJson.data;
+      const basePath = window.location.origin;
 
       recommendPosts.forEach((post) => {
         const article = document.createElement("article");
         article.className = "post-list-item";
         article.innerHTML = `
-                    <a href="${post.url}">
+                    <a href="${basePath}${post.id}">
                         ${
                           post.thumbnail
                             ? `<div class="cover-img">
@@ -390,7 +392,7 @@
                                 ${post.categories
                                   .map(
                                     (category) =>
-                                      `<span>${category.name}</span>`
+                                      `<span>${category.toUpperCase()}</span>`
                                   )
                                   .join("")}
                             </div>`
@@ -645,11 +647,47 @@
       // }).catch(console.error);
     }
 
+    async function increaseView(id){
+      fetch(`${BASE_URL}/posts/view/increase?id=${id}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+      }
+      ).catch(console.error);
+    }
+
     if (postId !== "/") {
+      increaseView(postId);
       //window.addEventListener("beforeunload", sendTrackingViewData);
       document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "hidden") sendTrackingViewData();
       });
     }
   });
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Fetch the current page's path (this is usually available in `window.location.pathname`)
+    const postId = window.location.pathname;
+
+    if (postId !== '/'){
+    // Fetch read time from API
+    fetch(`${BASE_URL}/posts/view?id=${postId}`)
+        .then(response => response.json())
+        .then(data => {
+            // Assuming the API returns a JSON object with a 'readTime' property
+            const readTime = data.data.view;
+            
+            // Update the readtime element
+            document.getElementById('views-count').textContent = readTime;
+        })
+        .catch(error => {
+            console.error('Error fetching read time:', error);
+            document.getElementById('views-count').textContent = 'Error';
+        });
+    }
+
+});
 })();
