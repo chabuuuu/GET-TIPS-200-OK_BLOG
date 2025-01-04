@@ -1,5 +1,7 @@
 (() => {
-  const BASE_URL = "https://eduhub.io.vn/gettips200ok-api/api/v1";
+  // const BASE_URL = "https://eduhub.io.vn/gettips200ok-api/api/v1";
+  // const BASE_URL = "http://localhost:3000/api/v1";
+  const BASE_URL = "http://152.42.232.101:9302/api/v1";
 
   var navEl = document.getElementById("theme-nav");
   navEl.addEventListener("click", (e) => {
@@ -226,13 +228,38 @@
     const carousel = document.getElementById("recommend-posts-carousel");
     const prevBtn = document.getElementById("carousel-prev");
     const nextBtn = document.getElementById("carousel-next");
+    async function getSessionKey() {
+      let sessionKey = localStorage.getItem("sessionKey");
+      if (!sessionKey) {
+        try {
+          const response = await fetch(`${BASE_URL}/session/key`);
+          if (response.ok) {
+            const data = await response.json();
+            sessionKey = data.data.sessionKey;
+            localStorage.setItem("sessionKey", sessionKey);
+            console.log("Session key:", sessionKey);
+          } else {
+            console.error("Failed to fetch session key");
+          }
+        } catch (error) {
+          console.error("Error fetching session key:", error);
+        }
+      }
+      return sessionKey;
+    }
 
     try {
-      const response = await fetch(`${BASE_URL}/posts/recommend?topN=10`);
+      const sessionKey = await getSessionKey();
+
+      const response = await fetch(`${BASE_URL}/posts/recommend?topN=10`, {
+        method: "GET", // Phương thức HTTP (GET, POST, PUT, DELETE, ...)
+        headers: {
+          "x-session-key": sessionKey,
+        },
+      });
       const responseInJson = await response.json();
       const recommendPosts = responseInJson.data;
       const basePath = window.location.origin;
-
 
       // Render các bài viết gợi ý
       recommendPosts.slice(0, 10).forEach((post) => {
@@ -329,8 +356,34 @@
   document.addEventListener("DOMContentLoaded", async () => {
     const forYouPostsContainer = document.getElementById("for-you-posts");
 
+    async function getSessionKey() {
+      let sessionKey = localStorage.getItem("sessionKey");
+      if (!sessionKey) {
+        try {
+          const response = await fetch(`${BASE_URL}/session/key`);
+          if (response.ok) {
+            const data = await response.json();
+            sessionKey = data.data.sessionKey;
+            localStorage.setItem("sessionKey", sessionKey);
+            console.log("Session key:", sessionKey);
+          } else {
+            console.error("Failed to fetch session key");
+          }
+        } catch (error) {
+          console.error("Error fetching session key:", error);
+        }
+      }
+      return sessionKey;
+    }
+
     try {
-      const response = await fetch(`${BASE_URL}/posts/recommend?topN=10`); // Replace with your actual API endpoint
+      const sessionKey = await getSessionKey();
+      const response = await fetch(`${BASE_URL}/posts/recommend?topN=10`, {
+        method: "GET", // Phương thức HTTP (GET, POST, PUT, DELETE, ...)
+        headers: {
+          "x-session-key": sessionKey,
+        },
+      });
       const responseInJson = await response.json();
       const recommendPosts = responseInJson.data;
       const basePath = window.location.origin;
@@ -609,14 +662,13 @@
       // }).catch(console.error);
     }
 
-    async function increaseView(id){
+    async function increaseView(id) {
       fetch(`${BASE_URL}/posts/view/increase?id=${id}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
-        }
-      }
-      ).catch(console.error);
+          "Content-Type": "application/json",
+        },
+      }).catch(console.error);
     }
 
     if (postId !== "/") {
@@ -628,28 +680,25 @@
     }
   });
 
-
-
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Fetch the current page's path (this is usually available in `window.location.pathname`)
     const postId = window.location.pathname;
 
-    if (postId !== '/'){
-    // Fetch read time from API
-    fetch(`${BASE_URL}/posts/view?id=${postId}`)
-        .then(response => response.json())
-        .then(data => {
-            // Assuming the API returns a JSON object with a 'readTime' property
-            const readTime = data.data.view;
-            
-            // Update the readtime element
-            document.getElementById('views-count').textContent = readTime;
+    if (postId !== "/") {
+      // Fetch read time from API
+      fetch(`${BASE_URL}/posts/view?id=${postId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // Assuming the API returns a JSON object with a 'readTime' property
+          const readTime = data.data.view;
+
+          // Update the readtime element
+          document.getElementById("views-count").textContent = readTime;
         })
-        .catch(error => {
-            console.error('Error fetching read time:', error);
-            document.getElementById('views-count').textContent = 'Error';
+        .catch((error) => {
+          console.error("Error fetching read time:", error);
+          document.getElementById("views-count").textContent = "Error";
         });
     }
-
-});
+  });
 })();
