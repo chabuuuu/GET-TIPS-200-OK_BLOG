@@ -263,15 +263,29 @@
 
       // Render các bài viết gợi ý
       recommendPosts.slice(0, 10).forEach((post) => {
-        const postElement = `
-                    <div class="recommend-post">
-                        <a href="${basePath}${post.id}">
-                            <img src="${post.thumbnail}" alt="${post.title}" class="thumbnail">
-                            <h4 class="recommend-title">${post.title}</h4>
-                        </a>
-                    </div>
-                `;
-        carousel.innerHTML += postElement;
+        const postElement = document.createElement("div");
+        postElement.className = "recommend-post";
+        postElement.innerHTML = `
+        <a href="${basePath}${post.id}">
+          <img src="${post.thumbnail}" alt="${post.title}" class="thumbnail">
+          <h4 class="recommend-title">${post.title}</h4>
+        </a>
+      `;
+
+        const linkElement = postElement.querySelector("a");
+        if (linkElement) {
+          linkElement.addEventListener("click", async (event) => {
+            event.preventDefault(); // Ngăn điều hướng mặc định
+            console.log(`Clicked post ID: ${post.id}`);
+            await sendTrackingData(`${BASE_URL}/session/tracking`, {
+              type: "click",
+              post_id: post.id, // href của bài viết được click
+            });
+            window.location.href = linkElement.href; // Tiến hành điều hướng
+          });
+        }
+
+        carousel.appendChild(postElement);
       });
 
       // Xử lý điều hướng
@@ -454,6 +468,21 @@
                         </div>
                     </a>
                 `;
+
+        // Add click event listener
+        const linkElement = article.querySelector("a");
+        if (linkElement) {
+          linkElement.addEventListener("click", async (event) => {
+            event.preventDefault(); // Prevent default navigation
+            console.log(`Clicked post ID: ${post.id}`);
+            await sendTrackingData(`${BASE_URL}/session/tracking`, {
+              type: "click",
+              post_id: post.id, // href của bài viết được click
+            });
+            window.location.href = linkElement.href; // Navigate to the URL
+          });
+        }
+
         forYouPostsContainer.appendChild(article);
       });
     } catch (error) {
@@ -463,9 +492,68 @@
     }
   });
 
+  // Xử lý click vào bài viết gợi ý
+
+  document.querySelectorAll("post-list-item a").forEach((anchor) => {
+    anchor.addEventListener("click", async function (event) {
+      // Lấy href của thẻ a được click
+      const href = anchor.getAttribute("href");
+      console.log("Href của bài viết đã click:", href);
+
+      await sendTrackingData(`${BASE_URL}/session/tracking`, {
+        type: "click",
+        post_id: href, // href của bài viết được click
+      });
+    });
+  });
+
+  async function getSessionKey() {
+    let sessionKey = localStorage.getItem("sessionKey");
+    if (!sessionKey) {
+      try {
+        const response = await fetch(`${BASE_URL}/session/key`);
+        if (response.ok) {
+          const data = await response.json();
+          sessionKey = data.data.sessionKey;
+          localStorage.setItem("sessionKey", sessionKey);
+          console.log("Session key:", sessionKey);
+        } else {
+          console.error("Failed to fetch session key");
+        }
+      } catch (error) {
+        console.error("Error fetching session key:", error);
+      }
+    }
+    return sessionKey;
+  }
+
+  // Function to send tracking data
+  async function sendTrackingData(endpoint, body) {
+    const sessionKey = await getSessionKey();
+    if (!sessionKey) return; // Abort if no session key
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-session-key": sessionKey,
+        },
+        body: JSON.stringify(body),
+      });
+      if (!response.ok) {
+        console.error(`Failed to send tracking data to ${endpoint}`);
+      }
+    } catch (error) {
+      console.error(`Error sending tracking data to ${endpoint}:`, error);
+    }
+  }
+
   //Trackig events
   document.addEventListener("DOMContentLoaded", function () {
     const posts = document.querySelectorAll(".post-list-item");
+
+    console.log("posts", posts);
 
     // Function to get or fetch session key
     async function getSessionKey() {
@@ -560,21 +648,6 @@
         });
       });
     }
-
-    // Xử lý click vào bài viết gợi ý
-
-    document.querySelectorAll(".recommend-post a").forEach((anchor) => {
-      anchor.addEventListener("click", async function (event) {
-        // Lấy href của thẻ a được click
-        const href = anchor.getAttribute("href");
-        console.log("Href của bài viết đã click:", href);
-
-        await sendTrackingData(`${BASE_URL}/session/tracking`, {
-          type: "click",
-          post_id: href, // href của bài viết được click
-        });
-      });
-    });
 
     // const recommendPosts = document.querySelectorAll(
     //   ".recommend-posts-carousel a"
