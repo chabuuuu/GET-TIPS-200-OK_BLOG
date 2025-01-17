@@ -1,13 +1,12 @@
 ---
 title: So sánh các món VIEWS, PROCEDURE, FUNCTION, CURSOR trong PostgreSQL
 wordCount: 1439
-charCount: 2718367
+charCount: 2718363
 imgCount: 27
 vidCount: 0
 wsCount: 67
 cbCount: 10
 readTime: About 50 minutes
-date: 2025-01-17 14:54:50
 tags:
   - backend
   - database
@@ -15,6 +14,7 @@ tags:
 categories:
   - backend
 cover_image: /images/so-sanh-tien-ich-postgres/PostgreSQL-Features.png
+date: 2025-01-17 14:54:50
 ---
 
 **SO SÁNH TỔNG QUÁT HIỆU SUẤT CÁC TIỆN ÍCH TRONG POSTGRES**
