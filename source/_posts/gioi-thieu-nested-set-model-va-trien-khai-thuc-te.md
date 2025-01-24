@@ -1,5 +1,5 @@
 ---
-title: Nested set mode và ứng dụng của nó trong quản lý folder phân cấp
+title: Nested set model và ứng dụng của nó trong quản lý folder phân cấp
 wordCount: 2289
 charCount: 2566214
 imgCount: 23
@@ -17,7 +17,7 @@ categories:
   - backend
 ---
 
-**Nested set mode và ứng dụng của nó trong quản lý folder phân cấp**
+**Nested set model và ứng dụng của nó trong quản lý folder phân cấp**
 
 1. **Giới thiệu**
    ![alt text](/images/gioi-thieu-nested-set-model-va-trien-khai-thuc-te/Screenshot_20250117_155048.png)
