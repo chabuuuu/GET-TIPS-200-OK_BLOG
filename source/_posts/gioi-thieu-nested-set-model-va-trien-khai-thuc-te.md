@@ -1,5 +1,5 @@
 ---
-title: gioi thieu nested set model va trien khai thuc te
+title: Nested set mode và ứng dụng của nó trong quản lý folder phân cấp
 wordCount: 2289
 charCount: 2566214
 imgCount: 23
@@ -8,7 +8,13 @@ wsCount: 11
 cbCount: 14
 readTime: About 47 minutes
 date: 2025-01-17 15:39:57
+cover_image: /images/gioi-thieu-nested-set-model-va-trien-khai-thuc-te/Example-of-a-nested-set-model-of-trees.png
 tags:
+  - backend
+  - database
+  - postgresql
+categories:
+  - backend
 ---
 
 **Nested set mode và ứng dụng của nó trong quản lý folder phân cấp**
