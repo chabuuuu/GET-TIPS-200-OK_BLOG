@@ -88,7 +88,7 @@ CREATE INDEX idx_gender_q1_2020 ON ENGINEER_Q1_2020 (gender); CREATE INDEX idx_g
 
 ```
 
-Khi bạn thực hiện một truy vấn với điều kiện WHERE không sử dụng trường phân vùng (partition key) trong một bảng phân vùng, PostgreSQL sẽ phải quét tất cả các phân vùng để tìm kiếm kết quả. Điều này có thể làm giảm hiệu suất truy vấn. Dưới đây là một số cách để tối ưu hóa hiệu suất trong trường hợp này:
+Khi thực hiện một truy vấn với điều kiện WHERE không sử dụng trường phân vùng (partition key) trong một bảng phân vùng, PostgreSQL sẽ phải quét tất cả các phân vùng để tìm kiếm kết quả. Điều này có thể làm giảm hiệu suất truy vấn.
 
 ### **2\. Query Optimization**
 
@@ -166,11 +166,11 @@ Kết luận, khi quyết định sử dụng partition, ta nên lựa các fiel
 
 Không phải trường hợp nào ta cũng có thể áp dụng Partition, trên thực tế Partition được xem như là một phương pháp thích hợp nếu như hiện tại database của bạn thỏa một trong các điều kiện sau:
 
-\+ Bạn có những bảng với size rất lớn: chỉ những bảng với size cực kì lớn với hàng tỷ rows thì chúng ta mới thấy được ích lợi của partition
+\+ Có những bảng với size rất lớn: chỉ những bảng với size cực kì lớn với hàng tỷ rows thì chúng ta mới thấy được ích lợi của partition
 
 \+ Hệ thống của bạn có mức tiêu thụ lớn: mặc dù có thể hiện tại hệ thống còn nhỏ, nhưng mức tiêu thụ lớn là điều dự đoán trong tương lai hệ thống của bạn sẽ ngày một lớn dần, do đó áp dụng partition từ sớm là giải pháp tránh được các trì trệ về performence về sau.
 
-\+ Bạn phát hiện ra rằng query chỉ tập trung vào 1 vùng xác định nào đó trong bảng: thích hợp để áp dụng partitioning, ví dụ như time-series data, partition by date sẽ gia tăng hiệu suất đáng kể khi ta query trong một khoảng thời gian nào đó mà không cần scan cả table lớn.
+\+ Phát hiện ra rằng query chỉ tập trung vào 1 vùng xác định nào đó trong bảng: thích hợp để áp dụng partitioning, ví dụ như time-series data, partition by date sẽ gia tăng hiệu suất đáng kể khi ta query trong một khoảng thời gian nào đó mà không cần scan cả table lớn.
 
 \+ Maintenance overhead: Đây là một trong những trường hợp nên sử dụng partition nhất, có ý kiến cho rằng, trên thực tế partitioning không nên được xem là một giải pháp giải quyết query performence mà nó nên được xem như là một giải pháp để tối ưu cho việc maintainance. Khi bảng ngày càng phình to, thì những maintenance operations như là VACUUM, ANALYZE và indexing sẽ rất chậm và ảnh hưởng đến hiệu suất hệ thống. Bằng cách áp dụng partitioning ta sẽ giải quyết được vấn đề này bởi vì chỉ cần tập trung maintainance một phần nhỏ trong cả table lớn.
 
