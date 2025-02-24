@@ -1,20 +1,21 @@
 ---
 title: Nested set model và ứng dụng của nó trong quản lý folder phân cấp
-wordCount: 2289
-charCount: 2566214
+wordCount: 2294
+charCount: 1738932
 imgCount: 23
 vidCount: 0
 wsCount: 11
 cbCount: 14
-readTime: About 47 minutes
-date: 2025-01-17 15:39:57
-cover_image: /images/gioi-thieu-nested-set-model-va-trien-khai-thuc-te/Example-of-a-nested-set-model-of-trees.png
+readTime: About 33 minutes
+cover_image: >-
+  /images/gioi-thieu-nested-set-model-va-trien-khai-thuc-te/Example-of-a-nested-set-model-of-trees.png
 tags:
   - backend
   - database
   - postgresql
 categories:
   - backend
+date: 2025-01-17 15:39:57
 ---
 
 **Nested set model và ứng dụng của nó trong quản lý folder phân cấp**
