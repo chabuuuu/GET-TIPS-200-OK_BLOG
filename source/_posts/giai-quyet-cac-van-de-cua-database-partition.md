@@ -9,8 +9,8 @@ tags:
 categories:
   - backend
 cover_image: /images/giai-quyet-cac-van-de-cua-database-partition/1684441140793.png
-wordCount: 1196
-charCount: 578659
+wordCount: 1178
+charCount: 578608
 imgCount: 10
 vidCount: 0
 wsCount: 3
