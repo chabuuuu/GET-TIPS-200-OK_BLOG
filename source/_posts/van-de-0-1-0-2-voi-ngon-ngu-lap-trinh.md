@@ -2,6 +2,13 @@
 title: Vì sao 1.222 - 1.111 != 0.111 ?
 date: 2025-02-24 18:12:39
 tags:
+  - javascript
+  - java
+  - c++
+  - c#
+categories:
+  - fun
+cover_image: /images/van-de-0-1-0-2-voi-ngon-ngu-lap-trinh/480982231_644509411593741_1384364252427062325_n.jpg
 ---
 
 Vì sao 1.222 - 1.111 != 0.111 ?
