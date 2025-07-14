@@ -8,6 +8,7 @@ wsCount: 0
 cbCount: 0
 readTime: About 8 minutes
 date: 2025-05-02 11:07:10
+cover_image: /images/tong-hop-ngu-phap-n5/thumbnail.jpg
 tags:
 ---
 
